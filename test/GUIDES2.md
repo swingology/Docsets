@@ -6,4 +6,5 @@ HEADER 4
 ----------
 
 [filename](swingology/Docsets/SwiftCheats.md)
+[filename 2](../SwiftCheats.md)
 
