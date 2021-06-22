@@ -64,4 +64,4 @@ select all lines you want a cursor
 | ***\*update\**** && ***\*remove\**** |                  |                                                            |     |     |
 | C                                    | :UpdateToc       | Updates TOC when g:vmt_autoupdate_on_save is ***\*off\**** |     |     |
 | C                                    | :GenTocGitlab    | Generrate TOC in GitLab style                              |     |     |
-   |      |     |
+|                                      |                  |                                                            |     |     |
