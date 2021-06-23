@@ -1,0 +1,1414 @@
+
+<HTML>
+<HEAD>
+<TITLE>SwiftCheats</TITLE>
+<STYLE>
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+</STYLE>
+</HEAD>
+<BODY><h1 id="toc-0">Swift 3 Cheatsheet</h1>
+<h2 id="toc-1">Syntax and style</h2>
+<ul>
+<li>C-like syntax.</li>
+<li>Strong typing with type inference.</li>
+<li>CamelCase</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">{</span> <span class="p">...</span> <span class="n">scope</span> <span class="p">...</span> <span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">ClassName</span> <span class="p">{</span> <span class="c1">// CamelCase</span>
+<span class="p">}</span>
+<span class="kd">struct</span> <span class="nc">StructName</span> <span class="p">{</span> <span class="c1">// K&amp;R Braces</span>
+    <span class="kd">let</span> <span class="nv">constantName</span> <span class="p">=</span> <span class="mi">0</span> <span class="c1">// lowerCamelCase</span>
+    <span class="kd">var</span> <span class="nv">variableName</span> <span class="p">=</span> <span class="mi">0</span> 
+<span class="p">}</span>
+
+<span class="n">doSomething</span><span class="p">()</span>
+<span class="n">doSomething</span><span class="p">();</span> <span class="c1">// Semicolons are *optional* at end of statements</span>
+</pre></div>
+<h3 id="toc-2">Function naming</h3>
+<div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nf">makeSomething</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="n">Something</span>
+<span class="kd">func</span> <span class="nf">isSomethingTrue</span> <span class="p">-&gt;</span> <span class="nb">Bool</span>
+
+<span class="kd">extension</span> <span class="nc">List</span> <span class="p">{</span> 
+  <span class="c1">/// Include all the words needed to avoid ambiguity</span>
+  <span class="kd">public</span> <span class="kr">mutating</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="n">at</span> <span class="n">position</span><span class="p">:</span> <span class="n">Index</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">Element</span>
+  <span class="c1">/// Remove needless words</span>
+  <span class="kd">public</span> <span class="kr">mutating</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="kc">_</span> <span class="n">member</span><span class="p">:</span> <span class="n">Element</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">Element</span><span class="p">?</span>
+<span class="p">}</span>
+<span class="n">employees</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">at</span><span class="p">:</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">allViews</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">cancelButton</span><span class="p">)</span> <span class="c1">// clearer</span>
+
+<span class="c1">/// Name variables, parameters, and associated types according to their roles</span>
+<span class="kd">func</span> <span class="nf">restock</span><span class="p">(</span><span class="n">from</span> <span class="n">widgetFactory</span><span class="p">:</span> <span class="n">WidgetFactory</span><span class="p">)</span> <span class="c1">// NO</span>
+<span class="kd">func</span> <span class="nf">restock</span><span class="p">(</span><span class="n">from</span> <span class="n">supplier</span><span class="p">:</span> <span class="n">WidgetFactory</span><span class="p">)</span> <span class="c1">// YES</span>
+
+<span class="c1">/// Compensate for weak type information to clarify a parameter’s role.</span>
+<span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="kc">_</span> <span class="n">observer</span><span class="p">:</span> <span class="bp">NSObject</span><span class="p">,</span> <span class="k">for</span> <span class="n">keyPath</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="c1">// NO</span>
+<span class="kd">func</span> <span class="nf">addObserver</span><span class="p">(</span><span class="kc">_</span> <span class="n">observer</span><span class="p">:</span> <span class="bp">NSObject</span><span class="p">,</span> <span class="n">forKeyPath</span> <span class="n">path</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="c1">// YES</span>
+
+<span class="c1">/// Split long function names</span>
+<span class="kd">func</span> <span class="nf">reticulateSplines</span><span class="p">(</span><span class="n">spline</span><span class="p">:</span> <span class="p">[</span><span class="nb">Double</span><span class="p">],</span> <span class="n">adjustmentFactor</span><span class="p">:</span> <span class="nb">Double</span><span class="p">,</span>
+    <span class="n">translateConstant</span><span class="p">:</span> <span class="nb">Int</span><span class="p">,</span> <span class="n">comment</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+  <span class="c1">// reticulate code goes here</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="toc-3">Commenting</h3>
+<div class="highlight"><pre><span></span><span class="c1">// Line</span>
+<span class="cm">/* Block */</span>
+</pre></div>
+<h3 id="toc-4">Documenting</h3>
+<div class="highlight"><pre><span></span><span class="cm">/*! or /** or /*:</span>
+<span class="cm"> * - Markdown can be used</span>
+<span class="cm"> */</span>
+
+<span class="cm">//: Single line w. markdown</span>
+<span class="cm">/// - parameter whateverParameter single line comment</span>
+
+<span class="cm">/*! Description</span>
+<span class="cm"> * @parameter paranName description</span>
+<span class="cm"> * @return whatever </span>
+<span class="cm"> */</span>
+</pre></div>
+<h3 id="toc-5">MARK, TODO, FIXME... ("pragma mark")</h3>
+<div class="highlight"><pre><span></span><span class="c1">// </span><span class="cs">MARK:</span><span class="c1">- Use mark to logically organize your code</span>
+<span class="c1">// </span><span class="cs">TODO:</span>
+<span class="c1">// </span><span class="cs">FIXME:</span>
+</pre></div>
+<h2 id="toc-6">Variables and constants</h2>
+<h3 id="toc-7">Constants</h3>
+<p><strong>let</strong> <em>constantName</em>[<em>:type</em>] = <em>value</em></p>
+<div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nv">constantName</span><span class="p">:</span><span class="nb">Int</span> <span class="p">=</span> <span class="mi">3</span>
+<span class="kd">let</span> <span class="nv">contatntNameInferred</span> <span class="p">=</span> <span class="mi">3</span> <span class="c1">// Type is inferred</span>
+<span class="kd">let</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+<h3 id="toc-8">Variables</h3>
+<p><strong>var</strong> <em>variableName</em>[<em>:type</em>][?] [ = <em>value</em>]</p>
+<ul>
+<li><em>type</em> is optional if value is given.</li>
+<li>? allows the variable to be nil.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">variableName</span><span class="p">:</span><span class="nb">Int</span> <span class="p">=</span> <span class="mi">3</span>
+<span class="kd">var</span> <span class="nv">variableNameInferred</span> <span class="p">=</span> <span class="mi">3</span> <span class="c1">// Type is inferred</span>
+<span class="n">variableName</span> <span class="p">=</span> <span class="mi">4</span> <span class="c1">// Assigning is ok</span>
+
+<span class="kd">var</span> <span class="nv">optionalValue</span><span class="p">?</span> <span class="p">=</span> <span class="kc">nil</span>
+<span class="k">if</span> <span class="kd">let</span> <span class="nv">strictlyValued</span> <span class="p">=</span> <span class="n">optionalValue</span> <span class="p">{</span>
+    <span class="c1">// Only if optionalValue != nil</span>
+<span class="p">}</span>
+</pre></div>
+<h2 id="toc-9">Types</h2>
+<h3 id="toc-10">Basic types</h3>
+<ul>
+<li>Int (1,2,3...)</li>
+<li>Float (1.0, 3.14,...)</li>
+<li>Double (1.0, 6.28,...)</li>
+<li>Bool (<strong>true</strong>, <strong>false</strong>)</li>
+<li>Character (<strong>"\u{00E9}"</strong>)</li>
+<li>String ("Hello world!", "", String())</li>
+<li>ClassName (UIButton, Potato...)</li>
+<li>Range (1...3, 1..&lt;3)</li>
+</ul>
+<h3 id="toc-11">Type conversion</h3>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">aString</span> <span class="p">=</span> <span class="s">&quot;1234&quot;</span>
+<span class="kd">var</span> <span class="nv">aInt</span> <span class="p">=</span> <span class="nb">Int</span><span class="p">(</span><span class="n">aString</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nv">anotherString</span> <span class="p">=</span> <span class="s">&quot;3.1415&quot;</span>
+<span class="kd">var</span> <span class="nv">aDouble</span> <span class="p">=</span> <span class="nb">Double</span><span class="p">(</span><span class="n">anotherString</span><span class="p">)</span>
+</pre></div>
+<h2 id="toc-12">Strings</h2>
+<ul>
+<li>String is a UTF container. </li>
+<li>To access the string as a collection of characters, use the <code>.characters</code> property.</li>
+<li>Use <code>import Foundation</code> for all the usual ObjC goodness.</li>
+</ul>
+<h3 id="toc-13">String creation</h3>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">emptyString</span> <span class="p">=</span> <span class="s">&quot;&quot;</span>            <span class="c1">// Empty String</span>
+<span class="kd">var</span> <span class="nv">stillEmpty</span> <span class="p">=</span> <span class="nb">String</span><span class="p">()</span>       <span class="c1">// Another empty String</span>
+<span class="kd">let</span> <span class="nv">helloWorld</span> <span class="p">=</span> <span class="s">&quot;Hello World!&quot;</span> <span class="c1">// String literal</span>
+
+<span class="kd">let</span> <span class="nv">a</span> <span class="p">=</span> <span class="nb">String</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>            <span class="c1">// from boolean: &quot;true&quot;</span>
+<span class="kd">let</span> <span class="nv">b</span><span class="p">:</span> <span class="nb">Character</span> <span class="p">=</span> <span class="s">&quot;A&quot;</span>          <span class="c1">// Explicit type to create a Character</span>
+<span class="kd">let</span> <span class="nv">c</span> <span class="p">=</span> <span class="nb">String</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>               <span class="c1">// from character &quot;A&quot;</span>
+<span class="kd">let</span> <span class="nv">d</span> <span class="p">=</span> <span class="nb">String</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>            <span class="c1">// from Double &quot;3.14&quot;</span>
+<span class="kd">let</span> <span class="nv">e</span> <span class="p">=</span> <span class="nb">String</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>            <span class="c1">// from Int &quot;1000&quot;</span>
+<span class="kd">let</span> <span class="nv">f</span> <span class="p">=</span> <span class="s">&quot;Result = </span><span class="si">\(</span><span class="n">d</span><span class="si">)</span><span class="s">&quot;</span>         <span class="c1">// Interpolation &quot;Result = 3.14&quot;</span>
+<span class="kd">let</span> <span class="nv">g</span> <span class="p">=</span> <span class="s">&quot;\u{2126}&quot;</span>              <span class="c1">// Unicode Ohm sign Ω</span>
+</pre></div>
+<h3 id="toc-14">String special characters</h3>
+<ul>
+<li>Null Character: <code>\0</code></li>
+<li>Backslash: <code>\\</code> (can be used to escape a double quote)</li>
+<li>Horizontal Tab: <code>\t</code></li>
+<li>Line Feed: <code>\n</code></li>
+<li>Carriage Return: <code>\r</code></li>
+<li>Double Quote: <code>\"</code></li>
+<li>Single Quote: <code>\'</code></li>
+<li>Unicode scalar: <code>\u{n}</code> where n is between one and eight hexadecimal digits</li>
+</ul>
+<h4 id="toc-15">Repeating String creation</h4>
+<div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nv">h</span> <span class="p">=</span> <span class="nb">String</span><span class="p">(</span><span class="n">repeating</span><span class="p">:</span><span class="s">&quot;01&quot;</span><span class="p">,</span> <span class="bp">count</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span> <span class="c1">// 010101</span>
+</pre></div>
+<h4 id="toc-16">String from a file</h4>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="kd">let</span> <span class="nv">txtPath</span> <span class="p">=</span> <span class="n">Bundle</span><span class="p">.</span><span class="n">main</span><span class="p">.</span><span class="n">path</span><span class="p">(</span><span class="n">forResource</span><span class="p">:</span> <span class="s">&quot;lorem&quot;</span><span class="p">,</span> <span class="n">ofType</span><span class="p">:</span> <span class="s">&quot;txt&quot;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">do</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">lorem</span> <span class="p">=</span> <span class="k">try</span> <span class="nb">String</span><span class="p">(</span><span class="n">contentsOfFile</span><span class="p">:</span> <span class="n">txtPath</span><span class="p">,</span> <span class="n">encoding</span><span class="p">:</span> <span class="p">.</span><span class="n">utf8</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Something went wrong&quot;</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="toc-17">String checks</h3>
+<h4 id="toc-18">String emptiness</h4>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">emptyString</span> <span class="p">=</span> <span class="s">&quot;&quot;</span>
+<span class="n">emptyString</span><span class="p">.</span><span class="bp">isEmpty</span>     <span class="c1">// true</span>
+</pre></div>
+<h4 id="toc-19">String Equality</h4>
+<div class="highlight"><pre><span></span><span class="bp">print</span> <span class="s">&quot;a&quot;</span> <span class="p">==</span> <span class="s">&quot;a&quot;</span> <span class="c1">// true</span>
+<span class="bp">print</span> <span class="s">&quot;a&quot;</span> <span class="p">==</span> <span class="s">&quot;b&quot;</span> <span class="c1">// false</span>
+</pre></div>
+<h4 id="toc-20">String comparing for order:</h4>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="s">&quot;aaa&quot;</span> <span class="o">&lt;</span> <span class="s">&quot;bbb&quot;</span> <span class="p">{</span>
+  <span class="bp">print</span><span class="p">(</span><span class="s">&quot;aaa is less than bbb&quot;</span><span class="p">)</span>  <span class="c1">// &quot;aaa is less than bbb&quot;</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="toc-21">String Containment</h4>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">helloWorld</span> <span class="p">=</span> <span class="s">&quot;Hello world!&quot;</span>
+<span class="bp">print</span> <span class="n">helloWorld</span><span class="p">.</span><span class="n">rangeOfString</span><span class="p">(</span><span class="s">&quot;Foo&quot;</span><span class="p">)</span> <span class="c1">// nil</span>
+</pre></div>
+<h4 id="toc-22">String testing for suffix/prefix</h4>
+<div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nv">line</span> <span class="p">=</span> <span class="s">&quot;0001 Some test data here %%%%&quot;</span>
+<span class="n">line</span><span class="p">.</span><span class="n">hasPrefix</span><span class="p">(</span><span class="s">&quot;0001&quot;</span><span class="p">)</span>    <span class="c1">// true</span>
+<span class="n">line</span><span class="p">.</span><span class="n">hasSuffix</span><span class="p">(</span><span class="s">&quot;%%%%&quot;</span><span class="p">)</span>    <span class="c1">// true</span>
+</pre></div>
+<h3 id="toc-23">String Character counting and Looping</h3>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">myString</span><span class="p">=</span><span class="s">&quot;Hello world!&quot;</span>
+<span class="kd">let</span> <span class="nv">len</span> <span class="p">=</span> <span class="n">myString</span><span class="p">.</span><span class="n">characters</span><span class="p">.</span><span class="bp">count</span> 
+<span class="k">for</span> <span class="n">ch</span> <span class="k">in</span> <span class="n">myString</span><span class="p">.</span><span class="n">characters</span> <span class="p">{</span>
+    <span class="bp">print</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="k">in</span> <span class="s">&quot;hello&quot;</span><span class="p">.</span><span class="n">characters</span><span class="p">.</span><span class="n">enumerated</span><span class="p">()</span> <span class="p">{</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;</span><span class="si">\(</span><span class="n">i</span><span class="si">)</span><span class="s">: </span><span class="si">\(</span><span class="n">c</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="cm">/* Prints:</span>
+<span class="cm">0: h</span>
+<span class="cm">1: e</span>
+<span class="cm">2: l</span>
+<span class="cm">3: l</span>
+<span class="cm">4: o</span>
+<span class="cm">*/</span>
+</pre></div>
+<h4 id="toc-24">String characters are <em>grapheme clusters</em>.</h4>
+<div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nv">single</span> <span class="p">=</span> <span class="s">&quot;Pok\u{00E9}mon&quot;</span>
+<span class="kd">let</span> <span class="nv">double</span> <span class="p">=</span> <span class="s">&quot;Pok\u{0065}\u{0301}mon&quot;</span> <span class="c1">// They both display identically:</span>
+
+<span class="p">(</span><span class="n">single</span><span class="p">,</span> <span class="n">double</span><span class="p">)</span> <span class="c1">// → (.0 &quot;Pokémon&quot;, .1 &quot;Pokémon&quot;)</span>
+<span class="c1">// And both have the same character count:</span>
+<span class="n">single</span><span class="p">.</span><span class="n">characters</span><span class="p">.</span><span class="bp">count</span> <span class="c1">// → 7</span>
+<span class="n">double</span><span class="p">.</span><span class="n">characters</span><span class="p">.</span><span class="bp">count</span> <span class="c1">// → 7</span>
+
+<span class="c1">// Only if you drop down to a view of the underlying representation can you see that they are different:</span>
+
+<span class="n">single</span><span class="p">.</span><span class="n">utf16</span><span class="p">.</span><span class="bp">count</span> <span class="c1">// → 7</span>
+<span class="n">double</span><span class="p">.</span><span class="n">utf16</span><span class="p">.</span><span class="bp">count</span> <span class="c1">// → 8</span>
+</pre></div>
+<h4 id="toc-25">String Views</h4>
+<div class="highlight"><pre><span></span><span class="n">country</span><span class="p">.</span><span class="n">characters</span>       <span class="c1">// characters</span>
+<span class="n">country</span><span class="p">.</span><span class="n">unicodeScalars</span>   <span class="c1">// Unicode scalar 21-bit codes</span>
+<span class="n">country</span><span class="p">.</span><span class="n">utf16</span>            <span class="c1">// UTF-16 encoding</span>
+<span class="n">country</span><span class="p">.</span><span class="n">utf8</span>             <span class="c1">// UTF-8 encoding</span>
+</pre></div>
+<h4 id="toc-26">Counting</h4>
+<div class="highlight"><pre><span></span><span class="c1">// spain = España</span>
+<span class="bp">print</span><span class="p">(</span><span class="s">&quot;</span><span class="si">\(</span><span class="n">spain</span><span class="p">.</span><span class="n">characters</span><span class="p">.</span><span class="bp">count</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>      <span class="c1">// 6</span>
+<span class="bp">print</span><span class="p">(</span><span class="s">&quot;</span><span class="si">\(</span><span class="n">spain</span><span class="p">.</span><span class="n">unicodeScalars</span><span class="p">.</span><span class="bp">count</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>  <span class="c1">// 6</span>
+<span class="bp">print</span><span class="p">(</span><span class="s">&quot;</span><span class="si">\(</span><span class="n">spain</span><span class="p">.</span><span class="n">utf16</span><span class="p">.</span><span class="bp">count</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>           <span class="c1">// 6</span>
+<span class="bp">print</span><span class="p">(</span><span class="s">&quot;</span><span class="si">\(</span><span class="n">spain</span><span class="p">.</span><span class="n">utf8</span><span class="p">.</span><span class="bp">count</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>            <span class="c1">// 7</span>
+</pre></div>
+<h3 id="toc-27">String manipulation</h3>
+<h4 id="toc-28">String Concatenation</h4>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">x</span> <span class="p">=</span> <span class="s">&quot;a&quot;</span> <span class="o">+</span> <span class="s">&quot;b&quot;</span>
+<span class="kd">var</span> <span class="nv">y</span> <span class="p">=</span> <span class="n">x</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="nb">Character</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">))</span>
+</pre></div>
+<h4 id="toc-29">String Interpolation</h4>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">world</span> <span class="p">=</span> <span class="s">&quot;world&quot;</span>
+<span class="kd">var</span> <span class="nv">hello</span> <span class="p">=</span> <span class="s">&quot;Hello&quot;</span>
+<span class="kd">var</span> <span class="nv">helloWorld</span> <span class="p">=</span> <span class="s">&quot;</span><span class="si">\(</span><span class="n">hello</span><span class="si">)</span><span class="s"> </span><span class="si">\(</span><span class="n">world</span><span class="si">)</span><span class="s">!&quot;</span>
+</pre></div>
+<h4 id="toc-30">String Prefix, suffix</h4>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">pref</span> <span class="p">=</span> <span class="nb">String</span><span class="p">(</span><span class="s">&quot;abcdefg&quot;</span><span class="p">.</span><span class="n">characters</span><span class="p">.</span><span class="kr">prefix</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span> <span class="c1">// abcd</span>
+</pre></div>
+<h4 id="toc-31">String Finding and Inserting</h4>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">hello</span> <span class="p">=</span> <span class="s">&quot;Hello!&quot;</span>
+<span class="k">if</span> <span class="kd">let</span> <span class="nv">idx</span> <span class="p">=</span> <span class="n">hello</span><span class="p">.</span><span class="n">characters</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="n">of</span><span class="p">:</span> <span class="s">&quot;!&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">hello</span><span class="p">.</span><span class="bp">insert</span><span class="p">(</span><span class="n">contentsOf</span><span class="p">:</span> <span class="s">&quot;, world&quot;</span><span class="p">.</span><span class="n">characters</span><span class="p">,</span> <span class="n">at</span><span class="p">:</span> <span class="n">idx</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="toc-32">Converting to upper/lower case</h4>
+<div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nv">mixedCase</span> <span class="p">=</span> <span class="s">&quot;AbcDef&quot;</span>
+<span class="kd">let</span> <span class="nv">upper</span> <span class="p">=</span> <span class="n">mixedCase</span><span class="p">.</span><span class="n">uppercased</span><span class="p">()</span> <span class="c1">// &quot;ABCDEF&quot;</span>
+<span class="kd">let</span> <span class="nv">lower</span> <span class="p">=</span> <span class="n">mixedCase</span><span class="p">.</span><span class="n">lowercased</span><span class="p">()</span> <span class="c1">// &quot;abcdef&quot;</span>
+</pre></div>
+<h2 id="toc-33">Files</h2>
+<h3 id="toc-34">UserDefaults</h3>
+<div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nv">userDefaults</span> <span class="p">=</span> <span class="n">UserDefaults</span><span class="p">.</span><span class="n">standard</span>
+<span class="n">userDefaults</span><span class="p">.</span><span class="n">setValue</span><span class="p">(</span><span class="s">&quot;Some Value&quot;</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="s">&quot;RPSomeUserPreference&quot;</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nv">userDefaults</span> <span class="p">=</span> <span class="n">UserDefaults</span><span class="p">.</span><span class="n">standard</span>
+<span class="kd">let</span> <span class="nv">someValue</span> <span class="p">=</span> <span class="n">userDefaults</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">forKey</span><span class="p">:</span> <span class="s">&quot;RPSomeUserPreference&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="nb">AnyObject</span><span class="p">?</span>
+</pre></div>
+<h3 id="toc-35">Reading</h3>
+<div class="highlight"><pre><span></span><span class="k">do</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">text</span> <span class="p">=</span> <span class="k">try</span> <span class="nb">String</span><span class="p">(</span><span class="n">contentsOf</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span> <span class="n">encoding</span><span class="p">:</span> <span class="nb">String</span><span class="p">.</span><span class="n">Encoding</span><span class="p">.</span><span class="n">utf8</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">{</span><span class="cm">/* error handling here */</span><span class="p">}</span>
+</pre></div>
+<ul>
+<li>To use a String path, use <code>contentsOfFile:path</code></li>
+</ul>
+<h3 id="toc-36">Writing</h3>
+<div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nv">text</span> <span class="p">=</span> <span class="s">&quot;Some text&quot;</span>
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="k">try</span> <span class="n">text</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">to</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span> <span class="n">atomically</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="n">encoding</span><span class="p">:</span> <span class="nb">String</span><span class="p">.</span><span class="n">Encoding</span><span class="p">.</span><span class="n">utf8</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">{</span><span class="cm">/* error handling here */</span><span class="p">}</span>
+</pre></div>
+<h2 id="toc-37">Objects and Classes</h2>
+<h3 id="toc-38">Primitives</h3>
+<p><strong>nil</strong> : Used to specify a null object pointer.  When classes are first initialized, all properties of the class point to <code>nil</code>.</p>
+<h3 id="toc-39">Classes, Structure, Functions and Protocols</h3>
+<table>
+<thead><tr>
+<th style="text-align:center">Directive</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td>typealias</td>
+<td>Introduces a named alias of an existing type</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>enum</td>
+<td>Introduces a named enumeration</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>struct</td>
+<td>Introduces a named structure</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>class</td>
+<td>Begins the declaration of a class</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>init</td>
+<td>Introduces an initializer for a class, struct or enum</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>init?</td>
+<td>Produces an optional instance or an implicitly unwrapped optional instance; can return <code>nil</code></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>deinit</td>
+<td>Declares a function called automatically when there are no longer any references to a class object, just before the class object is deallocated</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>func</td>
+<td>Begins the declaration of a function</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>protocol</td>
+<td>Begins the declaration of a formal protocol</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>static</td>
+<td>Defines as type-level within struct or enum</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>convenience</td>
+<td>Delegate the init process to another initializer or to one of the class’s designated initializers</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>extension</td>
+<td>Extend the behavior of class, struct, or enum</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>subscript</td>
+<td>Adds subscripting support for objects of a particular type, normally for providing a convenient syntax for accessing elements in a collective, list or sequence</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>override</td>
+<td>Marks overriden initializers</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toc-40">Patterns: Delegation</h3>
+<ul>
+<li>When creating custom delegate methods, an unnamed first parameter should be the delegate source. (UIKit contains numerous examples of this.)</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nf">namePickerView</span><span class="p">(</span><span class="kc">_</span> <span class="n">namePickerView</span><span class="p">:</span> <span class="n">NamePickerView</span><span class="p">,</span> <span class="n">didSelectName</span> <span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span>
+<span class="kd">func</span> <span class="nf">namePickerViewShouldReload</span><span class="p">(</span><span class="kc">_</span> <span class="n">namePickerView</span><span class="p">:</span> <span class="n">NamePickerView</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span>
+</pre></div>
+<h3 id="toc-41">Patterns: Singleton</h3>
+<div class="highlight"><pre><span></span><span class="kd">class</span> <span class="bp">MyClass</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="kd">let</span> <span class="nv">sharedInstance</span> <span class="p">=</span> <span class="bp">MyClass</span><span class="p">()</span>   
+    <span class="n">fileprivate</span> <span class="kd">init</span><span class="p">()</span> <span class="p">{}</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nv">myClass</span> <span class="p">=</span> <span class="bp">MyClass</span><span class="p">.</span><span class="n">sharedInstance</span>
+</pre></div>
+<h3 id="toc-42">Enum &amp; Bitmask Types</h3>
+<div class="highlight"><pre><span></span><span class="c1">// Specifying a typed enum with a name (recommended way)</span>
+<span class="kd">enum</span> <span class="nc">UITableViewCellStyle</span><span class="p">:</span> <span class="nb">Int</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="k">default</span><span class="p">,</span> <span class="n">valueOne</span><span class="p">,</span> <span class="n">valueTwo</span><span class="p">,</span> <span class="n">subtitle</span>
+<span class="p">}</span>
+
+<span class="c1">// Accessing it:</span>
+<span class="kd">let</span> <span class="nv">cellStyle</span><span class="p">:</span> <span class="n">UITableViewCellStyle</span> <span class="p">=</span> <span class="p">.</span><span class="k">default</span>
+</pre></div>
+<h4 id="toc-43">Working with Bitmasks</h4>
+<div class="highlight"><pre><span></span><span class="kd">struct</span> <span class="nc">Options</span><span class="p">:</span> <span class="n">OptionSet</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">rawValue</span><span class="p">:</span> <span class="nb">Int</span>
+
+    <span class="kd">init</span><span class="p">(</span><span class="n">rawValue</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">rawValue</span> <span class="p">=</span> <span class="n">rawValue</span>
+    <span class="p">}</span>
+
+    <span class="kd">init</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kc">self</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">rawValue</span><span class="p">:</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">number</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">static</span> <span class="kd">let</span> <span class="nv">OptionOne</span> <span class="p">=</span> <span class="n">Options</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="kd">static</span> <span class="kd">let</span> <span class="nv">OptionTwo</span> <span class="p">=</span> <span class="n">Options</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="kd">static</span> <span class="kd">let</span> <span class="nv">OptionThree</span> <span class="p">=</span> <span class="n">Options</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nv">options</span><span class="p">:</span> <span class="n">Options</span> <span class="p">=</span> <span class="p">[.</span><span class="n">OptionOne</span><span class="p">,</span> <span class="p">.</span><span class="n">OptionTwo</span><span class="p">]</span>
+
+<span class="n">options</span><span class="p">.</span><span class="bp">contains</span><span class="p">(.</span><span class="n">OptionOne</span><span class="p">)</span> <span class="c1">// true</span>
+<span class="n">options</span><span class="p">.</span><span class="bp">contains</span><span class="p">(.</span><span class="n">OptionThree</span><span class="p">)</span> <span class="c1">// false</span>
+</pre></div>
+<h3 id="toc-44">Type Casting</h3>
+<h4 id="toc-45">Checking Types</h4>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">item</span> <span class="k">is</span> <span class="n">Movie</span> <span class="p">{</span>
+    <span class="n">movieCount</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;It is a movie.&quot;</span><span class="p">)</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">item</span> <span class="k">is</span> <span class="n">Song</span> <span class="p">{</span>
+    <span class="n">songCount</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;It is a song.&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="toc-46">Operators: as? and as!</h4>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="k">in</span> <span class="n">library</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="kd">let</span> <span class="nv">movie</span> <span class="p">=</span> <span class="n">item</span> <span class="k">as</span><span class="p">?</span> <span class="n">Movie</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Director: </span><span class="si">\(</span><span class="n">movie</span><span class="p">.</span><span class="n">director</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="kd">let</span> <span class="nv">song</span> <span class="p">=</span> <span class="n">item</span> <span class="k">as</span><span class="p">?</span> <span class="n">Song</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Artist: </span><span class="si">\(</span><span class="n">song</span><span class="p">.</span><span class="n">artist</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="toc-47">Casting from Generic Types</h4>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">someObjects</span> <span class="p">=</span> <span class="p">[</span><span class="nb">Any</span><span class="p">]()</span>
+
+<span class="k">for</span> <span class="n">movie</span> <span class="k">in</span> <span class="n">someObjects</span> <span class="k">as</span><span class="p">!</span> <span class="p">[</span><span class="n">Movie</span><span class="p">]</span> <span class="p">{</span>
+    <span class="c1">// do stuff</span>
+<span class="p">}</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">things</span> <span class="p">=</span> <span class="p">[</span><span class="nb">Any</span><span class="p">]()</span>
+
+<span class="k">for</span> <span class="n">thing</span> <span class="k">in</span> <span class="n">things</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="n">thing</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="mi">0</span> <span class="k">as</span> <span class="nb">Int</span><span class="p">:</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Zero as an Int&quot;</span><span class="p">)</span>
+    <span class="k">case</span> <span class="kd">let</span> <span class="nv">someString</span> <span class="k">as</span><span class="p">!</span> <span class="nb">String</span><span class="p">:</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;S string value of </span><span class="se">\&quot;</span><span class="si">\(</span><span class="n">someString</span><span class="si">)</span><span class="se">\&quot;</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="k">case</span> <span class="kd">let</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">as</span><span class="p">!</span> <span class="p">(</span><span class="nb">Double</span><span class="p">,</span> <span class="nb">Double</span><span class="p">):</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;An (x, y) point at </span><span class="si">\(</span><span class="n">x</span><span class="si">)</span><span class="s">, </span><span class="si">\(</span><span class="n">y</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="k">case</span> <span class="kd">let</span> <span class="nv">movie</span> <span class="k">as</span><span class="p">!</span> <span class="n">Movie</span><span class="p">:</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;A movie called &#39;</span><span class="si">\(</span><span class="n">movie</span><span class="p">.</span><span class="n">name</span><span class="si">)</span><span class="s">&#39; by director </span><span class="si">\(</span><span class="n">movie</span><span class="p">.</span><span class="n">director</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="k">default</span><span class="p">:</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Didn&#39;t match any of the cases specified&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="toc-48">Basic Casting</h4>
+<div class="highlight"><pre><span></span><span class="c1">// Example 1:</span>
+<span class="kd">let</span> <span class="nv">aDifferentDataType</span><span class="p">:</span> <span class="nb">Float</span> <span class="p">=</span> <span class="mf">3.14</span>
+<span class="kd">let</span> <span class="nv">anInt</span><span class="p">:</span> <span class="nb">Int</span> <span class="p">=</span> <span class="nb">Int</span><span class="p">(</span><span class="n">aDifferentDataType</span><span class="p">)</span>
+
+<span class="c1">// Example 2:</span>
+<span class="kd">let</span> <span class="nv">aString</span><span class="p">:</span> <span class="nb">String</span> <span class="p">=</span> <span class="nb">String</span><span class="p">(</span><span class="n">anInt</span><span class="p">)</span>
+</pre></div>
+<h2 id="toc-49">Operators</h2>
+<h4 id="toc-50">Arithmetic Operators</h4>
+<table>
+<thead><tr>
+<th style="text-align:center">Operator</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td>+</td>
+<td>Addition</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>-</td>
+<td>Subtraction</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>*</td>
+<td>Multiplication</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>/</td>
+<td>Division</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>%</td>
+<td>Remainder</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-51">Comparative Operators</h4>
+<table>
+<thead><tr>
+<th style="text-align:center">Operator</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td>==</td>
+<td>Equal to</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>===</td>
+<td>Identical to</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>!=</td>
+<td>Not equal to</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>!==</td>
+<td>Not identical to</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>~=</td>
+<td>Pattern match, also "is in range", e.g. 1..&lt;3 ~= 2</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>&gt;</td>
+<td>Greater than</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>&lt;</td>
+<td>Less than</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>&gt;=</td>
+<td>Greater than or equal to</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>&lt;=</td>
+<td>Less than or equal to</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-52">Assignment Operators</h4>
+<table>
+<thead><tr>
+<th style="text-align:center">Operator</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td>=</td>
+<td>Assign</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>+=</td>
+<td>Addition</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>-=</td>
+<td>Subtraction</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>*=</td>
+<td>Multiplication</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>/=</td>
+<td>Division</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>%=</td>
+<td>Remainder</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>&amp;=</td>
+<td>Bitwise AND</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>&#124;=</td>
+<td>Bitwise Inclusive OR</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>^=</td>
+<td>Exclusive OR</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>&lt;&lt;=</td>
+<td>Shift Left</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>&gt;&gt;=</td>
+<td>Shift Right</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-53">Logical Operators</h4>
+<table>
+<thead><tr>
+<th style="text-align:center">Operator</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td>!</td>
+<td>NOT</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>&amp;&amp;</td>
+<td>Logical AND</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>&#124;&#124;</td>
+<td>Logical OR</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-54">Range Operators</h4>
+<table>
+<thead><tr>
+<th style="text-align:center">Operator</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td>..&lt;</td>
+<td>Half-open range</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>...</td>
+<td>Closed range</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-55">Bitwise Operators</h4>
+<table>
+<thead><tr>
+<th style="text-align:center">Operator</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td>&amp;</td>
+<td>Bitwise AND</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>&#124;</td>
+<td>Bitwise Inclusive OR</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>^</td>
+<td>Exclusive OR</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>~</td>
+<td>Unary complement (bit inversion)</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>&lt;&lt;</td>
+<td>Shift Left</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>&gt;&gt;</td>
+<td>Shift Right</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-56">Overflow and Underflow Operators</h4>
+<table>
+<thead><tr>
+<th style="text-align:center">Operator</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td>&amp;+</td>
+<td>Addition</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>&amp;-</td>
+<td>Subtraction</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>&amp;*</td>
+<td>Multiplication</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">willOverflow</span> <span class="p">=</span> <span class="nb">UInt8</span><span class="p">.</span><span class="bp">max</span>
+<span class="c1">// willOverflow equals 255, which is the largest value a UInt8 can hold</span>
+<span class="n">willOverflow</span> <span class="p">=</span> <span class="n">willOverflow</span> <span class="o">&amp;+</span> <span class="mi">1</span>
+<span class="c1">// willOverflow is now equal to 0</span>
+
+<span class="kd">var</span> <span class="nv">willUnderflow</span> <span class="p">=</span> <span class="nb">UInt8</span><span class="p">.</span><span class="bp">min</span>
+<span class="c1">// willUnderflow equals 0, which is the smallest value a UInt8 can hold</span>
+<span class="n">willUnderflow</span> <span class="p">=</span> <span class="n">willUnderflow</span> <span class="o">&amp;-</span> <span class="mi">1</span>
+<span class="c1">// willUnderflow is now equal to 255</span>
+</pre></div>
+<h4 id="toc-57">Other Operators</h4>
+<table>
+<thead><tr>
+<th style="text-align:center">Operator</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td>??</td>
+<td>Nil coalescing</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>?:</td>
+<td>Ternary conditional</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>!</td>
+<td>Force unwrap object value</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>?</td>
+<td>Safely unwrap object value</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toc-58">Operator Overloading</h2>
+<ul>
+<li>Limited to <code>/ = - + * % &lt; &gt; ! &amp; | ^ . ~</code>. </li>
+<li>Cannot overload <code>=</code> operator by itself (it must be combined with another symbol).</li>
+<li><code>prefix</code>: goes before an object such as <code>-negativeNumber</code></li>
+<li><code>infix</code>: goes between two objects, such as <code>a + b</code></li>
+<li><code>postfix</code>: goes after an object, such as <code>unwrapMe!</code>
+Examples:</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="kd">struct</span> <span class="nc">Vector2D</span><span class="p">:</span> <span class="n">CustomStringConvertible</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nv">x</span> <span class="p">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">y</span> <span class="p">=</span> <span class="mf">0.0</span>
+
+    <span class="kd">var</span> <span class="nv">description</span><span class="p">:</span> <span class="nb">String</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">&quot;Vector2D(x: </span><span class="si">\(</span><span class="n">x</span><span class="si">)</span><span class="s">, y: </span><span class="si">\(</span><span class="n">y</span><span class="si">)</span><span class="s">)&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">infix</span> <span class="kd">operator</span> <span class="o">+-</span><span class="p">:</span> <span class="n">AdditionPrecedence</span>
+<span class="kd">extension</span> <span class="nc">Vector2D</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="kd">func</span> <span class="o">+-</span> <span class="p">(</span><span class="kr">left</span><span class="p">:</span> <span class="n">Vector2D</span><span class="p">,</span> <span class="kr">right</span><span class="p">:</span> <span class="n">Vector2D</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">Vector2D</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Vector2D</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="kr">left</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="kr">right</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="kr">left</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="kr">right</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nv">firstVector</span> <span class="p">=</span> <span class="n">Vector2D</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nv">secondVector</span> <span class="p">=</span> <span class="n">Vector2D</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mf">4.0</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nv">plusMinusVector</span> <span class="p">=</span> <span class="n">firstVector</span> <span class="o">+-</span> <span class="n">secondVector</span>
+<span class="c1">// plusMinusVector is a Vector2D instance with values of (4.0, -2.0)</span>
+</pre></div>
+<h2 id="toc-59">Preprocessor</h2>
+<table>
+<thead><tr>
+<th style="text-align:center">Directive</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td>#if</td>
+<td>An <code>if</code> conditional statement</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>#elif</td>
+<td>An <code>else if</code> conditional statement</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>#else</td>
+<td>An <code>else</code> conditional statement</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>#endif</td>
+<td>An <code>end if</code> conditional statement</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toc-60">Imports</h3>
+<table>
+<thead><tr>
+<th style="text-align:center">Directive</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td>import</td>
+<td>Imports a framework</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-61">Operators</h4>
+<table>
+<thead><tr>
+<th style="text-align:center">Directive</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td>operator</td>
+<td>Introduces a new infix, prefix, or postfix operator</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-62">Declaration Modifiers</h4>
+<table>
+<thead><tr>
+<th style="text-align:center">Directive</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td>dynamic</td>
+<td>Marks a member declaration so that access is always dynamically dispatched using the Objective-C runtime and never inlined or devirtualized by the compiler</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>final</td>
+<td>Specifies that a class can’t be subclassed, or that a property, function, or subscript of a class can’t be overridden in any subclass</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>lazy</td>
+<td>Indicates that the property’s initial value is calculated and stored at most once, when the property is first accessed</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>optional</td>
+<td>Specifies that a protocol’s property, function, or subscript isn’t required to be implemented by conforming members</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>required</td>
+<td>Marks the initializer so that every subclass must implement it</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>weak</td>
+<td>Indicates that the variable or property has a weak reference to the object stored as its value</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-63">Access Control</h4>
+<table>
+<thead><tr>
+<th style="text-align:center">Directive</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td>open</td>
+<td>Can be subclassed outside of its own module and its methods overridden as well; truly open to modification by others and useful for framework builders</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>public</td>
+<td>Can only be subclassed by its own module or have its methods overridden by others within the same module</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>internal</td>
+<td>(Default) Indicates the entities are only available to the entire module that includes the definition, e.g. an app or framework target</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>fileprivate</td>
+<td>Indicates the entities are available only from within the source file where they are defined</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td>private</td>
+<td>Indicates the entities are available only from within the declaring scope within the file where they are defined (e.g. within the <code>{ }</code> brackets only)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toc-64">Literals</h2>
+<p>Literals are compiler directives which provide a shorthand notation for creating common objects.</p>
+<table>
+<thead><tr>
+<th style="text-align:center">Syntax</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td><code>"string"</code></td>
+<td>Returns a <code>String</code> object</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td><code>28</code></td>
+<td>Returns an <code>Int</code></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td><code>3.14</code>, <code>0xFp2</code>, <code>1.25e2</code></td>
+<td>Returns a <code>Float</code> object</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td><code>true</code>, <code>false</code></td>
+<td>Returns a <code>Bool</code> object</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td><code>[]</code></td>
+<td>Returns an <code>Array</code> object</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td><code>[keyName:value]</code></td>
+<td>Returns a <code>Dictionary</code> object</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td><code>0b</code></td>
+<td>Returns a binary digit</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td><code>0o</code></td>
+<td>Returns an octal digit</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td><code>0x</code></td>
+<td>Returns a hexadecimal digit</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toc-65">Functions</h2>
+<h3 id="toc-66">Declaration Syntax</h3>
+<p>Functions without a return type use this format:</p>
+<div class="highlight"><pre><span></span><span class="c1">// Does not return anything or take any arguments</span>
+<span class="kd">func</span> <span class="nf">doWork</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Code</span>
+<span class="p">}</span>
+</pre></div>
+<p><code>class</code> precedes declarations of class functions:</p>
+<div class="highlight"><pre><span></span><span class="c1">// Call on a class, e.g. MyClass.someClassFunction()</span>
+<span class="kd">class</span> <span class="nc">func</span> <span class="n">someClassFunction</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Code</span>
+<span class="p">}</span>
+</pre></div>
+<p><code>static</code> is similar to class functions where you don't need an instance of the class or struct in order to call a method on it:</p>
+<div class="highlight"><pre><span></span><span class="c1">// Call on a class/struct, e.g. MyStruct.someStaticFunction()</span>
+<span class="kd">static</span> <span class="kd">func</span> <span class="nf">someStaticFunction</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Code</span>
+<span class="p">}</span>
+</pre></div>
+<p>Declare instance functions:</p>
+<div class="highlight"><pre><span></span><span class="c1">// Called on an instance of a class, e.g. myClass.someInstanceFunction()</span>
+<span class="kd">func</span> <span class="nf">doMoreWork</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Code</span>
+<span class="p">}</span>
+</pre></div>
+<p>Function arguments are declared within the parentheses:</p>
+<div class="highlight"><pre><span></span><span class="c1">// Draws a point</span>
+<span class="kd">func</span> <span class="nf">draw</span><span class="p">(</span><span class="n">point</span><span class="p">:</span> <span class="n">CGPoint</span><span class="p">)</span>
+</pre></div>
+<p>Return types are declared as follows:</p>
+<div class="highlight"><pre><span></span><span class="c1">// Returns a String object for the given String argument</span>
+<span class="kd">func</span> <span class="nf">sayHelloToMyLilFriend</span><span class="p">(</span><span class="n">lilFriendsName</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&quot;Oh hello, </span><span class="si">\(</span><span class="n">lilFriendsName</span><span class="si">)</span><span class="s">. Cup of tea?&quot;</span>
+<span class="p">}</span>
+</pre></div>
+<p>You can have multiple return values, referred to as a tuple:</p>
+<div class="highlight"><pre><span></span><span class="c1">// Returns multiple objects</span>
+<span class="kd">func</span> <span class="nf">sayHelloToMyLilFriend</span><span class="p">(</span><span class="n">lilFriendsName</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">nameLength</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="s">&quot;Oh hello, </span><span class="si">\(</span><span class="n">lilFriendsName</span><span class="si">)</span><span class="s">. Cup of tea?&quot;</span><span class="p">,</span> <span class="bp">countElements</span><span class="p">(</span><span class="n">lilFriendsName</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nv">hello</span> <span class="p">=</span> <span class="n">sayHelloToMyLilFriend</span><span class="p">(</span><span class="s">&quot;Rob&quot;</span><span class="p">)</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">hello</span><span class="p">.</span><span class="n">msg</span><span class="p">)</span> <span class="c1">// &quot;Oh hello, Rob. Cup of tea?&quot;</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">hello</span><span class="p">.</span><span class="n">nameLength</span><span class="p">)</span> <span class="c1">// 3</span>
+</pre></div>
+<p>And those multiple return values can be optional:</p>
+<div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nf">sayHelloToMyLilFriend</span><span class="p">(</span><span class="n">lilFriendsName</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">nameLength</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)?</span>
+</pre></div>
+<p>By default, external parameter names are given when you call the function, but you can specify that one or more are not shown in the method signature by putting a <code>_</code> symbol in front of the parameter name:</p>
+<div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nf">sayHelloToMyLilFriend</span><span class="p">(</span><span class="kc">_</span> <span class="n">lilFriendsName</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Code</span>
+<span class="p">}</span>
+
+<span class="n">sayHelloToMyLilFriend</span><span class="p">(</span><span class="s">&quot;Rob&quot;</span><span class="p">)</span>
+</pre></div>
+<p>or you can rename the variable once within the method scope:</p>
+<div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nf">sayHelloToMyLilFriend</span><span class="p">(</span><span class="n">friendsName</span> <span class="n">lilFriendsName</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Code</span>
+<span class="p">}</span>
+
+<span class="n">sayHelloToMyLilFriend</span><span class="p">(</span><span class="n">friendsName</span><span class="p">:</span> <span class="s">&quot;Rob&quot;</span><span class="p">)</span> <span class="c1">// and local variable is `lilFriendsName`</span>
+</pre></div>
+<p>You can also specify default values for the parameters:</p>
+<div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nf">sayHelloToMyLilFriend</span><span class="p">(</span><span class="kc">_</span> <span class="n">lilFriendsName</span><span class="p">:</span> <span class="nb">String</span> <span class="p">=</span> <span class="s">&quot;Rob&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Code</span>
+<span class="p">}</span>
+
+<span class="n">sayHelloToMyLilFriend</span><span class="p">()</span> <span class="c1">// &quot;Oh hello, Rob. Cup of tea?&quot;</span>
+<span class="n">sayHelloToMyLilFriend</span><span class="p">(</span><span class="s">&quot;Jimbob&quot;</span><span class="p">)</span> <span class="c1">// &quot;Oh hello, Jimbob. Cup of tea?&quot;</span>
+</pre></div>
+<p>Swift also supports variadic parameters so you can have an open-ended number of parameters passed in:</p>
+<div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nf">sayHelloToMyLilFriends</span><span class="p">(</span><span class="kc">_</span> <span class="n">lilFriendsName</span><span class="p">:</span> <span class="nb">String</span><span class="p">...)</span> <span class="p">{</span>
+    <span class="c1">// Code</span>
+<span class="p">}</span>
+
+<span class="n">sayHelloToMyLilFriends</span><span class="p">(</span><span class="s">&quot;Rob&quot;</span><span class="p">,</span> <span class="s">&quot;Jimbob&quot;</span><span class="p">,</span> <span class="s">&quot;Cletus&quot;</span><span class="p">)</span>
+<span class="c1">// &quot;Oh hello, Rob, Jimbob and Cletus. Cup of tea?&quot;</span>
+</pre></div>
+<p>And lastly, you can also use a prefix to declare input parameters as <code>inout</code>.</p>
+<p>An in-out parameter has a value that is passed in to the function, is modified by the function, and is passed back out of the function to replace the original value.</p>
+<p>You may remember <code>inout</code> parameters from Objective-C where you had to sometimes pass in an <code>&amp;error</code> parameter to certain methods, where the <code>&amp;</code> symbol specifies that you're actually passing in a pointer to the object instead of the object itself. The same applies to Swift's <code>inout</code> parameters now as well.</p>
+<h4 id="toc-67">Calling Functions</h4>
+<p>Functions are called using dot syntax: <code>myClass.doWork()</code> or <code>self.sayHelloToMyLilFriend("Rob Phillips")</code></p>
+<p><code>self</code> is a reference to the function's containing class.</p>
+<p>At times, it is necessary to call a function in the superclass using <code>super.someMethod()</code>.</p>
+<h2 id="toc-68">Constants and Variables</h2>
+<p>Declaring a constant or variable allows you to maintain a reference to an object within a class or to pass objects between classes.</p>
+<p>Constants are defined with <code>let</code> and variables with <code>var</code>. By nature, constants are obviously immutable (i.e. cannot be changed once they are instantiated) and variables are mutable.</p>
+<div class="highlight"><pre><span></span><span class="kd">class</span> <span class="bp">MyClass</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">text</span> <span class="p">=</span> <span class="s">&quot;Hello&quot;</span> <span class="c1">// Constant</span>
+    <span class="kd">var</span> <span class="nv">isComplete</span><span class="p">:</span> <span class="nb">Bool</span> <span class="c1">// Variable</span>
+<span class="p">}</span>
+</pre></div>
+<p>There are many ways to declare properties in Swift, so here are a few examples:</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">myInt</span> <span class="p">=</span> <span class="mi">1</span> <span class="c1">// inferred type</span>
+<span class="kd">var</span> <span class="nv">myExplicitInt</span><span class="p">:</span> <span class="nb">Int</span> <span class="p">=</span> <span class="mi">1</span> <span class="c1">// explicit type</span>
+<span class="kd">var</span> <span class="nv">x</span> <span class="p">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="p">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">z</span> <span class="p">=</span> <span class="mi">3</span> <span class="c1">// declare multiple variables</span>
+
+<span class="kd">let</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1">// declare multiple constants</span>
+</pre></div>
+<h4 id="toc-69">Access Levels</h4>
+<p>The default access level for constants and variables is <code>internal</code>:</p>
+<div class="highlight"><pre><span></span><span class="kd">class</span> <span class="bp">MyClass</span> <span class="p">{</span>
+    <span class="c1">// Internal (default) properties</span>
+    <span class="kd">var</span> <span class="nv">text</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">var</span> <span class="nv">isComplete</span><span class="p">:</span> <span class="nb">Bool</span>
+<span class="p">}</span>
+</pre></div>
+<p>To declare them publicly or openly, they should also be within a <code>public</code> or <code>open</code> class as shown below:</p>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="bp">MyClass</span> <span class="p">{</span>
+    <span class="c1">// Public properties</span>
+    <span class="kd">public</span> <span class="kd">var</span> <span class="nv">text</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">public</span> <span class="kd">let</span> <span class="nv">x</span> <span class="p">=</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="c1">// Or</span>
+
+<span class="n">open</span> <span class="kd">class</span> <span class="bp">MyClass</span> <span class="p">{</span>
+    <span class="c1">// Public properties</span>
+    <span class="n">open</span> <span class="kd">var</span> <span class="nv">text</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="n">open</span> <span class="kd">let</span> <span class="nv">x</span> <span class="p">=</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+<p>File private variables and constants are declared with the <code>fileprivate</code> directive:</p>
+<div class="highlight"><pre><span></span><span class="kd">class</span> <span class="bp">MyClass</span> <span class="p">{</span>
+    <span class="c1">// Private properties</span>
+    <span class="n">fileprivate</span> <span class="kd">var</span> <span class="nv">text</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="n">fileprivate</span> <span class="kd">let</span> <span class="nv">x</span> <span class="p">=</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="toc-70">Getters and Setters</h4>
+<p>In Objective-C, variables were backed by getters, setters, and private instance variables created at build time. However, in Swift getters and setters are only used for computed properties and constants actually don't have a getter or setter at all.</p>
+<p>The getter is used to read the value, and the setter is used to write the value. The setter clause is optional, and when only a getter is needed, you can omit both clauses and simply return the requested value directly. However, if you provide a setter clause, you must also provide a getter clause.</p>
+<p>You can overrride the getter and setter of a property to create the illusion of the Objective-C property behavior, but you'd need to store them as a private property with a different name (not recommended for most scenarios):</p>
+<div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kd">var</span> <span class="nv">_x</span><span class="p">:</span> <span class="nb">Int</span> <span class="p">=</span> <span class="mi">0</span>
+
+<span class="kd">var</span> <span class="nv">x</span><span class="p">:</span> <span class="nb">Int</span> <span class="p">{</span>
+    <span class="kr">get</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Accessing x...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_x</span>
+    <span class="p">}</span>
+    <span class="kr">set</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Setting x...&quot;</span><span class="p">)</span>
+        <span class="n">_x</span> <span class="p">=</span> <span class="n">newValue</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="toc-71">Access Callbacks</h4>
+<p>Swift also has callbacks for when a property will be or was set using <code>willSet</code> and <code>didSet</code> shown below:</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">numberOfEdits</span> <span class="p">=</span> <span class="mi">0</span>
+<span class="kd">var</span> <span class="nv">value</span><span class="p">:</span> <span class="nb">String</span> <span class="p">=</span> <span class="s">&quot;&quot;</span> <span class="p">{</span>
+    <span class="kr">willSet</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;About to set value...&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="kr">didSet</span> <span class="p">{</span>
+        <span class="n">numberOfEdits</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="toc-72">Accessing</h4>
+<p>Properties can be accessed using dot notation:</p>
+<div class="highlight"><pre><span></span><span class="n">myClass</span><span class="p">.</span><span class="n">myVariableOrConstant</span>
+<span class="kc">self</span><span class="p">.</span><span class="n">myVariable</span> <span class="c1">// Self is optional here except within closure scopes</span>
+</pre></div>
+<h4 id="toc-73">Local Variables</h4>
+<p>Local variables and constants only exist within the scope of a function.</p>
+<div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nf">doWork</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">localStringVariable</span> <span class="p">=</span> <span class="s">&quot;Some local string variable.&quot;</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">doSomething</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="n">localStringVariable</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+<p><a href="#swift-3-cheat-sheet">Back to top</a></p>
+<h2 id="toc-74">Naming Conventions</h2>
+<p>The general rule of thumb: Clarity and brevity are both important, but clarity should never be sacrificed for brevity.</p>
+<h4 id="toc-75">Functions and Properties</h4>
+<p>These both use <code>camelCase</code> where the first letter of the first word is lowercase and the first letter of each additional word is capitalized.</p>
+<h4 id="toc-76">Class names and Protocols</h4>
+<p>These both use <code>CapitalCase</code> where the first letter of every word is capitalized.</p>
+<h3 id="toc-77">Enums</h3>
+<p>The options in an enum should be <code>lowerCamelCased</code></p>
+<h4 id="toc-78">Functions</h4>
+<p>These should use verbs if they perform some action (e.g. <code>performInBackground</code>).  You should be able to infer what is happening, what arguments a function takes, or what is being returned just by reading a function signature.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><span class="c1">// Correct</span>
+<span class="kd">func</span> <span class="nf">move</span><span class="p">(</span><span class="n">from</span> <span class="n">start</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">to</span> <span class="n">end</span><span class="p">:</span> <span class="n">Point</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="c1">// Incorrect (likely too expressive, but arguable)</span>
+<span class="kd">func</span> <span class="nf">moveBetweenPoints</span><span class="p">(</span><span class="n">from</span> <span class="n">start</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">to</span> <span class="n">end</span><span class="p">:</span> <span class="n">Point</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="c1">// Incorrect (not expressive enough and lacking argument clarity)</span>
+<span class="kd">func</span> <span class="nf">move</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Point</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+<p><a href="#swift-3-cheat-sheet">Back to top</a></p>
+<h2 id="toc-79">Closures</h2>
+<p>Closures in Swift are similar to blocks in Objective-C and are essentially chunks of code, typically organized within a <code>{}</code> clause, that are passed between functions or to execute code as a callback within a function. Swift's <code>func</code> functions are actually just a special case of a closure in use.</p>
+<h4 id="toc-80">Syntax</h4>
+<div class="highlight"><pre><span></span><span class="p">{</span> <span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">returnType</span> <span class="k">in</span>
+    <span class="n">statements</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="toc-81">Examples</h4>
+<div class="highlight"><pre><span></span><span class="c1">// Map just iterates over the array and performs whatever is in the closure on each item</span>
+<span class="kd">let</span> <span class="nv">people</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;Rob&quot;</span><span class="p">,</span> <span class="s">&quot;Jimbob&quot;</span><span class="p">,</span> <span class="s">&quot;Cletus&quot;</span><span class="p">]</span>
+<span class="n">people</span><span class="p">.</span><span class="bp">map</span><span class="p">({</span>
+    <span class="p">(</span><span class="n">person</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="k">in</span>
+    <span class="s">&quot;Oh hai, </span><span class="si">\(</span><span class="n">person</span><span class="si">)</span><span class="s">...&quot;</span>
+<span class="p">})</span>
+<span class="c1">// Oh hai, Rob</span>
+<span class="c1">// Oh hai, Jimbob</span>
+<span class="c1">// Oh hai, Cletus</span>
+
+<span class="c1">// Closure for alphabetically reversing an array of names, where sorted is a Swift library function</span>
+<span class="kd">let</span> <span class="nv">names</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;Francesca&quot;</span><span class="p">,</span> <span class="s">&quot;Joe&quot;</span><span class="p">,</span> <span class="s">&quot;Bill&quot;</span><span class="p">,</span> <span class="s">&quot;Sally&quot;</span><span class="p">,</span> <span class="p">]</span>
+<span class="kd">var</span> <span class="nv">reversed</span> <span class="p">=</span> <span class="n">names</span><span class="p">.</span><span class="bp">sorted</span> <span class="p">{</span> <span class="p">(</span><span class="n">s1</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">s2</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="k">in</span>
+    <span class="k">return</span> <span class="n">s1</span> <span class="o">&gt;</span> <span class="n">s2</span>
+<span class="p">}</span>
+<span class="c1">// Or on a single line:</span>
+<span class="n">reversed</span> <span class="p">=</span> <span class="n">names</span><span class="p">.</span><span class="bp">sorted</span><span class="p">{</span> <span class="p">(</span><span class="n">s1</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">s2</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="k">in</span> <span class="k">return</span> <span class="n">s1</span> <span class="o">&gt;</span> <span class="n">s2</span> <span class="p">}</span>
+<span class="c1">// Or because Swift can infer the Bool type:</span>
+<span class="n">reversed</span> <span class="p">=</span> <span class="n">names</span><span class="p">.</span><span class="bp">sorted</span> <span class="p">{</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span> <span class="k">in</span> <span class="k">return</span> <span class="n">s1</span> <span class="o">&gt;</span> <span class="n">s2</span> <span class="p">}</span>
+<span class="c1">// Or because the return statement is implied:</span>
+<span class="n">reversed</span> <span class="p">=</span> <span class="n">names</span><span class="p">.</span><span class="bp">sorted</span> <span class="p">{</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span> <span class="k">in</span> <span class="n">s1</span> <span class="o">&gt;</span> <span class="n">s2</span> <span class="p">}</span>
+<span class="c1">// Or even shorter using shorthand argument names, such as $0, $1, $2, etc.:</span>
+<span class="n">reversed</span> <span class="p">=</span> <span class="n">names</span><span class="p">.</span><span class="bp">sorted</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">&gt;</span> <span class="nv">$1</span> <span class="p">}</span>
+<span class="c1">// Or just ridiculously short because Swift&#39;s String greater-than operator implementation exactly matches this function definition:</span>
+<span class="n">reversed</span> <span class="p">=</span> <span class="n">names</span><span class="p">.</span><span class="bp">sorted</span><span class="p">(</span><span class="n">by</span><span class="p">:</span> <span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+<p>If the closure is the last parameter to the function, you can also use the trailing closure pattern. This is especially useful when the closure code is especially long and you'd like some extra space to organize it:</p>
+<div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nf">someFunctionThatTakesAClosure</span><span class="p">(</span><span class="n">closure</span><span class="p">:</span> <span class="p">()</span> <span class="p">-&gt;</span> <span class="p">())</span> <span class="p">{</span>
+    <span class="c1">// function body goes here</span>
+<span class="p">}</span>
+
+<span class="c1">// Instead of calling like this:</span>
+<span class="n">someFunctionThatTakesAClosure</span><span class="p">({</span>
+    <span class="c1">// closure&#39;s body goes here</span>
+<span class="p">})</span>
+
+<span class="c1">// You can use trailing closure like this:</span>
+<span class="n">someFunctionThatTakesAClosure</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// trailing closure&#39;s body goes here</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="toc-82">Capturing Values</h4>
+<p>A closure can capture constants and variables from the surrounding context in which it is defined. The closure can then refer to and modify the values of those constants and variables from within its body, even if the original scope that defined the constants and variables no longer exists.</p>
+<p>In Swift, the simplest form of a closure that can capture values is a nested function, written within the body of another function. A nested function can capture any of its outer function’s arguments and can also capture any constants and variables defined within the outer function.</p>
+<div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nf">makeIncrementor</span><span class="p">(</span><span class="n">forIncrement</span> <span class="n">amount</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nv">runningTotal</span> <span class="p">=</span> <span class="mi">0</span>
+    <span class="kd">func</span> <span class="nf">incrementor</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="p">{</span>
+        <span class="n">runningTotal</span> <span class="o">+=</span> <span class="n">amount</span>
+        <span class="k">return</span> <span class="n">runningTotal</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">incrementor</span>
+<span class="p">}</span>
+</pre></div>
+<p>Swift determines what should be captured by reference and what should be copied by value. You don’t need to annotate a variable to say that they can be used within the nested function. Swift also handles all memory management involved in disposing of variables when they are no longer needed by the function.</p>
+<h4 id="toc-83">Capturing Self</h4>
+<p>If you create a closure that references <code>self.*</code> it will capture <code>self</code> and retain a strong reference to it. This is sometimes the intended behavior, but often could lead to retain cycles where both objects won't get deallocated at the end of their lifecycles.</p>
+<p>The two best options are to use <code>unowned</code> or <code>weak</code>. This might look a bit messy, but saves a lot of headache.</p>
+<p>Use <code>unowned</code> when you know the closure will only be called if <code>self</code> still exists, but you don't want to create a strong (retain) reference.</p>
+<p>Use <code>weak</code> if there is a chance that <code>self</code> will not exist, or if the closure is not dependent upon <code>self</code> and will run without it. If you do use <code>weak</code> also remember that <code>self</code> will be an optional variable and should be checked for existence.</p>
+<div class="highlight"><pre><span></span><span class="kd">typealias</span> <span class="n">SomeClosureType</span> <span class="p">=</span> <span class="p">(</span><span class="kc">_</span> <span class="n">value</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="p">()</span>
+
+<span class="kd">class</span> <span class="nc">SomeClass</span> <span class="p">{</span>
+    <span class="n">fileprivate</span> <span class="kd">var</span> <span class="nv">currentValue</span> <span class="p">=</span> <span class="s">&quot;&quot;</span>
+
+    <span class="kd">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">someMethod</span> <span class="p">{</span> <span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="c1">// Retained self</span>
+            <span class="kc">self</span><span class="p">.</span><span class="n">currentValue</span> <span class="p">=</span> <span class="n">value</span>
+        <span class="p">}</span>
+
+        <span class="n">someMethod</span> <span class="p">{</span> <span class="p">[</span><span class="kr">unowned</span> <span class="kc">self</span><span class="p">]</span> <span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="c1">// Not retained, but expected to exist</span>
+            <span class="kc">self</span><span class="p">.</span><span class="n">currentValue</span> <span class="p">=</span> <span class="n">value</span>
+
+        <span class="p">}</span>
+
+        <span class="n">someMethod</span> <span class="p">{</span> <span class="p">[</span><span class="kr">weak</span> <span class="kc">self</span><span class="p">]</span> <span class="n">value</span> <span class="k">in</span> <span class="c1">// Not retained, not expected to exist</span>
+            <span class="c1">// Or, alternatively you could do</span>
+            <span class="k">guard</span> <span class="kd">let</span> <span class="nv">sSelf</span> <span class="p">=</span> <span class="kc">self</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+
+            <span class="c1">// Or, alternatively use `self?` without the guard</span>
+            <span class="n">sSelf</span><span class="p">.</span><span class="n">currentValue</span> <span class="p">=</span> <span class="n">value</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">someMethod</span><span class="p">(</span><span class="n">closure</span><span class="p">:</span> <span class="n">SomeClosureType</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">closure</span><span class="p">(</span><span class="s">&quot;Hai&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="toc-84">Capture extending object lifetime</h3>
+<div class="highlight"><pre><span></span><span class="n">resource</span><span class="p">.</span><span class="n">request</span><span class="p">().</span><span class="n">onComplete</span> <span class="p">{</span> <span class="p">[</span><span class="kr">weak</span> <span class="kc">self</span><span class="p">]</span> <span class="n">response</span> <span class="k">in</span>
+  <span class="k">guard</span> <span class="kd">let</span> <span class="nv">strongSelf</span> <span class="p">=</span> <span class="kc">self</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span>
+  <span class="p">}</span>
+  <span class="kd">let</span> <span class="nv">model</span> <span class="p">=</span> <span class="n">strongSelf</span><span class="p">.</span><span class="n">updateModel</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+  <span class="n">strongSelf</span><span class="p">.</span><span class="n">updateUI</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+<h2 id="toc-85">Control Statements</h2>
+<p>Swift uses all of the same control statements that other languages have:</p>
+<h4 id="toc-86">If-Else If-Else</h4>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">someTestCondition</span> <span class="p">{</span>
+    <span class="c1">// Code to execute if the condition is true</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">someOtherTestCondition</span> <span class="p">{</span>
+    <span class="c1">// Code to execute if the other test condition is true</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// Code to execute if the prior conditions are false</span>
+<span class="p">}</span>
+</pre></div>
+<p>As you can see, parentheses are optional.</p>
+<h4 id="toc-87">Ternary Operators</h4>
+<p>The shorthand notation for an <code>if-else</code> statement is a ternary operator of the form: <code>someTestCondition ? doIfTrue : doIfFalse</code></p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nf">stringForTrueOrFalse</span><span class="p">(</span><span class="n">trueOrFalse</span><span class="p">:</span> <span class="nb">Bool</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">trueOrFalse</span> <span class="p">?</span> <span class="s">&quot;True&quot;</span> <span class="p">:</span> <span class="s">&quot;False&quot;</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="toc-88">For Loops</h4>
+<p>Swift enables you to use ranges inside of <code>for</code> loops now:</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index</span> <span class="k">in</span> <span class="mf">1.</span><span class="p">..</span><span class="mi">5</span> <span class="p">{</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;</span><span class="si">\(</span><span class="n">index</span><span class="si">)</span><span class="s"> times 5 is </span><span class="si">\(</span><span class="n">index</span> <span class="o">*</span> <span class="mi">5</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// Or if you don&#39;t need the value of the index</span>
+<span class="kd">let</span> <span class="nv">base</span> <span class="p">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">power</span> <span class="p">=</span> <span class="mi">10</span>
+<span class="kd">var</span> <span class="nv">answer</span> <span class="p">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="kc">_</span> <span class="k">in</span> <span class="mf">1.</span><span class="p">..</span><span class="n">power</span> <span class="p">{</span>
+    <span class="n">answer</span> <span class="o">*=</span> <span class="n">base</span>
+<span class="p">}</span>
+<span class="bp">print</span><span class="p">(</span><span class="s">&quot;</span><span class="si">\(</span><span class="n">base</span><span class="si">)</span><span class="s"> to the power of </span><span class="si">\(</span><span class="n">power</span><span class="si">)</span><span class="s"> is </span><span class="si">\(</span><span class="n">answer</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="c1">// prints &quot;3 to the power of 10 is 59049&quot;</span>
+</pre></div>
+<h4 id="toc-89">Enumerating arrays &amp; dictionaries</h4>
+<div class="highlight"><pre><span></span><span class="c1">// We explicitly cast to the Movie class from AnyObject class</span>
+<span class="k">for</span> <span class="n">movie</span> <span class="k">in</span> <span class="n">someObjects</span> <span class="k">as</span> <span class="p">[</span><span class="n">Movie</span><span class="p">]</span> <span class="p">{</span>
+    <span class="c1">// Code to execute each time</span>
+<span class="p">}</span>
+
+<span class="c1">// Enumerating simple array</span>
+<span class="kd">let</span> <span class="nv">names</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;Anna&quot;</span><span class="p">,</span> <span class="s">&quot;Alex&quot;</span><span class="p">,</span> <span class="s">&quot;Brian&quot;</span><span class="p">,</span> <span class="s">&quot;Jack&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">name</span> <span class="k">in</span> <span class="n">names</span> <span class="p">{</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Hello, </span><span class="si">\(</span><span class="n">name</span><span class="si">)</span><span class="s">!&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// Enumerating simple dictionary</span>
+<span class="kd">let</span> <span class="nv">numberOfLegs</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;spider&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s">&quot;ant&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">]</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">animalName</span><span class="p">,</span> <span class="n">legCount</span><span class="p">)</span> <span class="k">in</span> <span class="n">numberOfLegs</span> <span class="p">{</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;</span><span class="si">\(</span><span class="n">animalName</span><span class="si">)</span><span class="s">s have </span><span class="si">\(</span><span class="n">legCount</span><span class="si">)</span><span class="s"> legs&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+<p>If you need to cast to a certain object type, see the earlier discussion about the <code>as!</code> and <code>as?</code> keywords.</p>
+<h4 id="toc-90">While Loop</h4>
+<div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">someTestCondition</span> <span class="p">{</span>
+   <span class="c1">// Code to execute while the condition is true</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="toc-91">Repeat While Loop</h4>
+<div class="highlight"><pre><span></span><span class="k">repeat</span> <span class="p">{</span>
+    <span class="c1">// Code to execute while the condition is true</span>
+<span class="p">}</span> <span class="k">while</span> <span class="n">someTestCondition</span>
+</pre></div>
+</BODY>
+</HTML>
