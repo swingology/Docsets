@@ -20,14 +20,14 @@
 
 ### EASY BEST ACTIONS
 
+| :h <term> | search help for term | C
 
-
-|COMMAND|mode |ACTION | EX |
-|----|---|---|---|
-|  b  | n | move to beginning of previous word | | 
-| $ | n | move to beginning of line | | 
-| g  _ | n  | move to last non blank char of line | |  
-| _ | n  |  move to first non blank char of line | | 
+| COMMAND | MODE | ACTION                               | TAGS | APP |
+|---------|------|--------------------------------------|------|-----|
+| b       | n    | move to beginning of previous word   | @cursor:     | @vim:    |
+| $       | n    | move to end of line            | @cursor:     | @vim:    |
+| g  _    | n    | move to last non blank char of line  | @cursor:     | @vim:    |
+| _       | n    | move to first non blank char of line |   @cursor:   |  @vim:   |
 
 shift l m h 
 | i	| ctrl h 	| backspace ||
@@ -40,8 +40,8 @@ shift l m h
 | i | O | inserts new line and INSERT MODE | |
 
 
-| nv |   | 
-115
+
+
 
 
 
@@ -82,13 +82,27 @@ nnoremap ,n :bn<CR>
 nnoremap ,b :bp<CR>
 nnoremap ,h :b#<CR>
 
+
+
+### BOOKMARKS
+| Shortcut             | Action                                                 | Mode   |
+| ------               | ------                                                 | ------ |
+| m{bookmarkname}      | create bookmark                                        | nv     |
+| `<bookmark name>     | move to exact location of bookmark                     | nv     |
+| '<bookmark name>     | move to beginning of line of bookmark                  | nv     |
+| :marks               | list all bookmarks                                     | c      |
+| :delmarks <bookmark> | delete bookmark                                        | c      |
+| d'<markname>         | delete everthing between currnet position and markline |        |
+|                      |                                                        |        |
+NOTE: Capital Mark can only exist in one file. A mark can only exist in one openn file. a bookmark can be on all open files
+
+
 ### LINKS
 
 [remap, noremape, nnoremap, vnoremap](https://stackoverflow.com/questions/3776117/what-is-the-difference-between-the-remap-noremap-nnoremap-and-vnoremap-mapping)
 [recording keys for repeated jobs](https://vim.fandom.com/wiki/Recording_keys_for_repeated_jobs
 [<leader> in vimrc](https://stackoverflow.com/questions/1764263/what-is-the-leader-in-a-vimrc-file)
-
-
+[Using marks and perform vim selection](https://www.howtoforge.com/tutorial/how-to-use-markers-and-perform-text-selection-in-vim/)
 #### PLUGINS
 https://github.com/mg979/vim-yanktools
 https://github.com/liuchengxu/vim-which-key
