@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-
-=======
 # VIM PLUGIN CHEATSHEET
->>>>>>> Stashed changes
 
 ## TODO
 - [ ] shift tab in zshell ~ FZF?
