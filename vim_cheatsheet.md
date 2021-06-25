@@ -15,10 +15,11 @@
     * [VIM SPLITS - PANE](#vim-splits-pane)
         * [VIM Splits Customization](#vim-splits-customization)
     * [VIM BUFFERS](#vim-buffers)
-        * [Buffer List](#buffer-list)
+        * [Buffer Link](#buffer-link)
     * [SELECTION](#selection)
     * [SEARCHING](#searching)
         * [Basic Search](#basic-search)
+        * [Searching Links](#searching-links)
     * [HIGHLIGHTING](#highlighting)
         * [Links](#links)
     * [BEST-ACTIONS](#best-actions)
@@ -35,19 +36,16 @@
 
 ### EASY BEST ACTIONS
 
-| :h <term> | search help for term | C
-
-
-
+| :h term | search help for term | C |
 
 | COMMAND    | MODE | ACTION                               | TAGS     | APP   |
 | ---------- | ---- | ------------------------------------ | -------- | ----- |
-|**NAVIGATION** |      |                                      |          |       |
+| **NAVIGATION** |  |                                      |          |       |
 | b          | n    | move to beginning of previous word   | @cursor: | @vim: |
-| $          | n    | move to end of line                  | @cursor: | @vim: |
+| '\$'       | n    | move to end of line **MEANS JSUT DOLLAR SIGN**  | @cursor: | @vim: |
 | g  _       | n    | move to last non blank char of line  | @cursor: | @vim: |
 | _          | n    | move to first non blank char of line | @cursor: | @vim: |
-| w or W     | n v  |                                      |          |       |
+| w or W     | n v  | move to beginning of word                                     |          |       |
 
 
 
@@ -98,7 +96,10 @@ shift l m h
 | :sp <file> | open horizontal split| c | | |
 | <num>:sp <file> | open h split with split height | c | | |
 | <num>:vsp <file> | open v split with split width | c | | |
+| :set scrollbind or scb | scroll the panes together | c | | | 
+| :set scb! | turn off scroll bind| | | | 
 
+| ctrl -w shft h/j/k/l | change split configurations | n|
 
 #### VIM Splits Customization
 ``` bash
@@ -148,16 +149,22 @@ nmap <M-Up> :resize -1<CR>
 | :vsp sb#   | opens buffer # in vsplit  | c | | | 
 | :sp sb# | opens buffer # in hsplit    | c | | | 
 | :Buf or :Buffers | FZF list buffers | c | | | 
-| :e <file> or :edit <file> | create buffere with file | c | | |
+| :e <#> or :edit <file> | create buffere with file | c | | |
+| :new | new buffer - split horiz | 
+| :vnew | new buffer - split vert   |
 | :b <num> or buffer <num> | display buffer with <num> | c | | | 
 | :bd   | delete buffer, fail if unsaved | c | | | 
-| :bd! | force delete buffer | c | | |i
+| :bd! | force delete buffer | c | | |
 | :ball | load all buffers in split windows | 
 | :vertical ball | load all buffers in v split windows | 
 | :sbuffer <num> | open buffer num in new window | 
 | :bdelete buf1 buf2 ... | delete buf1 and buf2 |
 | :2,4bdelete | delete buffers from 2 to 4|
+| :bbad <file> | add a new buffer - not open 
 
+:sball :unhide :sunhide
+:bfirst :brewind :bprevious :bNext
+:sbfirst :sbrewind :sbnext :sbprevious :sbNext
 
 :vertical sb 3
     Create a vertical split and show buffer number 3 in the window to the left.
@@ -167,17 +174,17 @@ nmap <M-Up> :resize -1<CR>
 
 :rightbelow sfind file.txt
 
+:map <buffer> ,w /[.,;]<CR>
+:abb <buffer> FF for (i = 0; i < ; ++i)
 
 
 
-
-#### Buffer List
+#### Buffer Link
 https://github.com/jlanzarotta/bufexplorer
+https://medium.com/@Sohjiro/introduction-to-vim-buffers-dd966ff518d
 
-
-
-
-
+http://vimdoc.sourceforge.net/cgi-bin/help?tag=map-local
+http://vimdoc.sourceforge.net/cgi-bin/help?tag=abbreviate-local
 
 
 
@@ -196,9 +203,9 @@ https://github.com/jlanzarotta/bufexplorer
 |---|---|---|---|---|
 | * over word | search forward for word under cursor | n |
 | # over word | search backwards for word under cursor | n|
-| /<search_pattern> | to search for pattern forwards |
-| ?<search_pattern> | to search for pattern backwards |
-| /\<WORD\>   | searches for exact WORD match |
+| /_pattern  | search pattern forwards |
+| ?_pattern | search pattern backwards |
+| /\<WORD\>  | searches for exact WORD match |
 | “gnu” you would use /\<gnu\> ||
 | After search|
 | n | find next occurence | 
@@ -207,6 +214,8 @@ https://github.com/jlanzarotta/bufexplorer
 | /Word\c  | search for Word case insensitve |
 | /Word\C  | search for Word case match search |
 
+#### Searching Links
+https://vim.fandom.com/wiki/Searching
 
 
 
@@ -256,6 +265,32 @@ nnoremap ,h :b#<CR>
 | :marks               | list all bookmarks                                     | c      |
 | :delmarks <bookmark> | delete bookmark                                        | c      |
 | d'<markname>         | delete everthing between currnet position and markline |        |
+ma 	set mark a at current cursor location
+'a 	jump to line of mark a (first non-blank character in line)
+`a 	jump to position (line and column) of mark a
+d'a 	delete from current line to line of mark a
+d`a 	delete from current cursor position to position of mark a
+c'a 	change text from current line to line of mark a
+y`a 	yank text to unnamed buffer from cursor to position of mark a
+:marks 	list all the current marks
+:marks aB 	list marks a, B
+]' 	jump to next line with a lowercase mark
+[' 	jump to previous line with a lowercase mark
+]` 	jump to next lowercase mark
+[` 	jump to previous lowercase mark 
+If you wipeout a buffer (command :bw), all marks for the buffer are deleted.
+
+
+
+The :delmarks command (abbreviated as :delm) may be used to delete specified marks.
+Command 	Description
+:delmarks a 	delete mark a
+:delmarks a-d 	delete marks a, b, c, d
+:delmarks abxy 	delete marks a, b, x, y
+:delmarks aA 	delete marks a, A
+:delmarks! 	delete all lowercase marks for the current buffer (a-z)
+
+
 |                      |                                                        |        |
 NOTE: Capital Mark can only exist in one file. A mark can only exist in one openn file. a bookmark can be on all open files
 
@@ -269,6 +304,9 @@ NOTE: Capital Mark can only exist in one file. A mark can only exist in one open
 #### PLUGINS
 https://github.com/mg979/vim-yanktools
 https://github.com/liuchengxu/vim-which-key
+
+
+
 
 #### REGISTERS
 -------
