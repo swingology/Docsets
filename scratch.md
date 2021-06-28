@@ -14,6 +14,20 @@ scratch buffers
 - [ ] :h quoteplus
 - [ ] :h ctrl-w_s
 - [ ] :h ctrl-w_v
+- [ ] @fix: vim-arline tabline
+- [ ] @m1mac: @markdown: @plugin: autocommplete charts
+
+
+# LINKS
+@vim: @oconfig:
+https://www.reddit.com/r/neovim/comments/cfdxo9/do_i_need_set_t_co256/
+
+
+
+
+@shortcut:
+https://unix.stackexchange.com/questions/93144/exit-vim-more-quickly
+
 
 
 
