@@ -134,3 +134,5 @@ dmypy.json
 # Mac Files 
 .DS_Store
 
+# Swap files
+.history/
