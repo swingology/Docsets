@@ -18,8 +18,13 @@
     * [VIM MULTIPLE CURSORS](#vim-multiple-cursors)
     * [VIM-MARKDOWN](#vim-markdown-1)
     * [vim-markdown-toc](#vim-markdown-toc)
+    * [gitgutter](#gitgutter)
+* [VIM CUSTOMIZATION VIMRC](#vim-customization-vimrc)
 
 <!-- vim-markdown-toc -->
+
+
+
 ## LINKS
 
 -------
@@ -92,9 +97,9 @@ https://vim.fandom.com/wiki/Avoid_the_escape_key
 
  gUaw : Change all of current WORD to upper.
 
- g~~  : Invert case to entire line
+ g ~ ~  : Invert case to entire line
 
- g~w  : Invert case to current WORD
+ g ~ w  : Invert case to current WORD
 
  guG  : Change to lowercase until the end of document.
 
@@ -138,7 +143,7 @@ select all lines you want a cursor
 | zC         | close a fold your cursor is on recursively |
 
 ### vim-markdown-toc
-
+@vimmd: @plugin:
 | MODE                                 | COMMAND          | ACTION                                                     |     |     |
 | ------------------------------------ | ---------------- | ---------------------------------------------------------- | --- | --- |
 | C                                    | :GenTocGitlab    | Generate TOC in GitLab style                               |     |     |
@@ -149,3 +154,82 @@ select all lines you want a cursor
 | C                                    | :UpdateToc       | Updates TOC when g:vmt_autoupdate_on_save is ***\*off\**** |     |     |
 | C                                    | :GenTocGitlab    | Generrate TOC in GitLab style                              |     |     |
 |                                      |                  |                                                            |     |     |
+
+
+
+
+
+### gitgutter
+@plugins: @vim: @git: @gitgutter:
+https://github.com/airblade/vim-gitgutter
+
+'in vimrc'
+let g:gitgutter_max_signs = 500 'default value'
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+
+ijump to git hunk
+]c or [c
+
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+
+map ghs <Plug>(GitGutterStageHunk)
+nmap ghu <Plug>(GitGutterUndoHunk)
+
+nmap ghp <Plug>(GitGutterPreviewHunk)
+
+set foldtext=gitgutter#fold#foldtext()
+
+
+
+
+You can stage or undo an individual hunk when your cursor is in it:
+
+    stage the hunk with <Leader>hs or
+    undo it with <Leader>hu.
+
+To stage part of an additions-only hunk by:
+
+    either visually selecting the part you want and staging with your mapping, e.g. <Leader>hs;
+    or using a range with the GitGutterStageHunk command, e.g. :42,45GitGutterStageHunk.
+
+To stage part of any hunk:
+
+    preview the hunk, e.g. <Leader>hp;
+    move to the preview window, e.g. :wincmd P;
+    delete the lines you do not want to stage;
+    stage the remaining lines: either write (:w) the window or stage via <Leader>hs or :GitGutterStageHunk.
+
+
+
+## VIM CUSTOMIZATION VIMRC
+
+
+https://stackoverflow.com/questions/3074068/how-to-change-the-color-of-the-selected-code-vim-scheme
+
+** Visual Line and Visual Block Coloring**
+  hi CursorLine guibg=#DDDDDD gui=none
+  hi CursorColumn guibg=#EEEEEE gui=none
+  hi MatchParen guifg=#f6f3e8 guibg=#857b6f gui=none
+  hi Pmenu   guifg=#f6f3e8 guibg=#DDDDDD gui=none
+  hi PmenuSel  guifg=#000000 guibg=#DDDDDD gui=none
+endif
+
+" General colors
+hi Cursor   guifg=NONE    guibg=#656565 gui=none
+hi Normal   guifg=#000000 guibg=#FFFFFF gui=none
+hi NonText   guifg=#808080 guibg=#FFFFFF gui=none
+hi LineNr   guifg=#857b6f guibg=#FFFFFF gui=none
+hi StatusLine  guifg=#000000 guibg=#FFFFFF gui=none
+hi StatusLineNC guifg=#857b6f guibg=#FFFFFF gui=none
+hi VertSplit  guifg=#444444 guibg=#FFFFFF gui=none
+hi Folded   guibg=#AAAAAA guifg=#FFFFFF gui=none
+hi Title  guifg=#000000 guibg=NONE gui=none
+hi Visual  guifg=#000000 guibg=#FFFFFF gui=none
+hi SpecialKey guifg=#808080 guibg=#FFFFFF gui=none
+
+hi Visual  guifg=#000000 guibg=#FFFFFF gui=none
+
+
+######################## ****************************************************

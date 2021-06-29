@@ -71,4 +71,4 @@ docker system prune
 
 
 ### UNINSTALL
-n
+https://doc.docker.com/engine/reference/commandline/app_uninstall
