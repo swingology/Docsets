@@ -34,6 +34,21 @@
 <!-- vim-markdown-toc -->
 
 
+### Look up
+
+Tip: it can be changed on the fly with:
+``` bash
+:let g:vim_markdown_folding_level = 1
+:edit
+```
+
+
+
+
+
+
+
+
 ### EASY BEST ACTIONS
 
 | :h term | search help for term | C |
@@ -46,10 +61,121 @@
 | g  _       | n    | move to last non blank char of line  | @cursor: | @vim: |
 | _          | n    | move to first non blank char of line | @cursor: | @vim: |
 | w or W     | n v  | move to beginning of word                                     |          |       |
+| <c-h> | i | backspace | | |
+| x or dw | n v | backspace or delete from end of word to cursor | | |
+| dw or d) | del from cursor to word - del from cursor to end of line |  |
+|daw or diw| n v | deleting inside the word segment / diw deletes a word without the space after it
+ | |
+| bh | n v | back one word and previous space
+
+asdkfjl;sdkaj a;sldkfj;aldskfj;;
+
+MODE
 
 
 
 
+| JOIN  | N/V            | I                        | N/V ACTION               | I ACTION    |
+|-------|----------------|--------------------------|--------------------------|-------------|
+|       | b / w          | shift left / right arrow | previous next/ next word |             |
+| <c-j> | | | switch windows           | Insert line |
+|       | $ or g_ (nonblank)  |     | Last char blank or nonblank   |                      |
+|       | _   |     | First char nonblank   |                      |
+| shift A | From N/V go to end of line change Insert mode| 
+| shift I | From N/V go to beginning of line and change Insert mode
+| [ ]  | N/V | go to beginning/end of paragraph|
+| ( ) | N/V | go to prev section |
+| o or O | N/V | insert a line below / insert a line at cursor change to insert mode | 
+| dd | n v | delete lines | 
+| d$ | n v | delete from cursor to end of line|
+| 3dd | n v | 3 delete lines from cursor |
+
+
+
+| <c-f> <c-b> | n v | forward/back page | 
+| <s-k> |n v | man word under cursor |
+| <s-k> | terminal interrupt | ??????| 
+
+
+| VIM MARKDOWN| 
+:Toc
+:TableFormat
+:InsertToc {n}  - display up to headers h{n} (n is an int)
+:InsertNToc
+]]              - go to next header
+[[              - go to previous header
+][              - go to next sibling
+[]              - go to previous sibling
+]c              - go to current header
+]u              - go to parent header 
+
+  
+ 
+
+|IN VIM-FZF|
+| :Files [PATH] | FZF in vim 
+
+| :Files [PATH]       - serach for files under PATH
+:Buffers            - search open buffers
+:Rg [Pattern]       - do a rg search in vim on Pattern
+:History:           - Command History
+:History/            - Search history
+:Snippets           - search Ultisnips
+:Commits            - search Git vommits
+:Commands           - search commands
+:Maps               - Normal mode mappings
+:Marks
+:windwos
+:Files [PATH] 	Files (runs $FZF_DEFAULT_COMMAND if defined)
+:GFiles [OPTS] 	Git files (git ls-files)
+:GFiles? 	Git files (git status)
+:Colors 	Color schemes
+:Ag [PATTERN] 	ag search result (ALT-A to select all, ALT-D to deselect all)
+:Rg [PATTERN] 	rg search result (ALT-A to select all, ALT-D to deselect all)
+:Lines [QUERY] 	Lines in loaded buffers
+:BLines [QUERY] 	Lines in the current buffer
+:Tags [QUERY] 	Tags in the project (ctags -R)
+:BTags [QUERY] 	Tags in the current buffer
+:Locate PATTERN 	locate command output
+:History 	v:oldfiles and open buffers
+:History: 	Command history
+:History/ 	Search history
+:Commits 	Git commits (requires fugitive.vim)
+:BCommits 	Git commits for the current buffer; visual-select lines to track changes in the range
+:Commands 	Commands
+:Maps 	Normal mode mappings
+:Helptags 	Help tags 1
+:Filetypes 	File types
+
+
+- Most commands support CTRL-T / CTRL-X / CTRL-V key bindings to open in a new tab, a new split, or in a new vertical split in SEARCH WINDOW
+- Bang-versions of the commands (e.g. Ag!) will open fzf in fullscreen
+- You can set g:fzf_command_prefix to give the same prefix to the commands
+    e.g. let g:fzf_command_prefix = 'Fzf' and you have FzfFiles, etc.
+
+
+
+lksdjfhkladsjhflk aslkdjhfdsklj aklsdjfhldkasj askljdfhlkadsjh aksjdfhlkdasjhf  
+kasjdhffkdsajh aklsdjhfkdlsj aklsdjfhdsaklj alskdjfhds lkfjh 
+ alskdjhfklasdjhfkldsajh laksjdhflkdasjhlkfjhasdlkfjhdlkjh
+laskdjflksdajfl;k a;ldskjfl;adskjf ;alsdkjfl ;sdakfj;lkjasdf al;sdkjf lkjasdf ;
+
+
+
+
+
+
+
+
+
+
+MODE CHANGE 
+
+Ins -> Normal | ii or < ctrl-[ >
+
+ctrl-j | ins | insert line
+
+sdfsdafsd     asdfdsfds   asdfdsfdsaf asdfsdafdsfsdbgb
 
 shift l m h 
 | i	| ctrl h 	| backspace ||
@@ -65,9 +191,6 @@ shift l m h
 | i | I | beginning of line and INSERT MODE | |
 | i | a | end of line and INSERT MODE | | 
 | i | O | inserts new line and INSERT MODE | |
-
-
-
 
 
 

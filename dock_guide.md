@@ -91,10 +91,10 @@ docker rename runningcontainer-name new-name
 docker inspect container-id | grep ip # it will give detial information and also the ip address
 docker ps # it will show on which port application is running on
 ```
- 
+
 #### terminal web based browser:
 
-```
+``` shell
 sudo yum install elinks
 elinks http://172.17.0.2 # use the ip address from docker inspect command
 telnet localhost #will give you the error
@@ -103,7 +103,7 @@ telnet http://172.17.0.2 80
 
 #### expose the port:
 
-```
+``` shell
 docker run -d --name=webserver1 -P nginx:latest # Any port that is exposed to my container I want you to make avaialble through host opearating system
 on random port between 32768 and 65535
 elinks http://172.17.0.2:32768 #dokcer ps will tell the host os port
@@ -125,7 +125,7 @@ docker run -itd -p 127.0.0.1:8081:80 nginx:latest
 
 #### start/stop container:
 
-```
+``` shell
 docker stop container-id or name
 docker start LifeCycle1
 docker restart LifeCycle1
@@ -133,15 +133,19 @@ docker restart LifeCycle1
 
 #### Dockerfile: build the image using the dockerfile
 
-```
+``` shell
 docker build -t latest123/apache . # where . is location for the Dockerfile
 # it will create the image from the base image
 # it wil basically create the image layer by layer and each layer is new container
 ```
 
+
+
+
+
 #### Create your own custom image
 
-```
+``` shell
 docker run -it ubuntu:xenial /bin/bash #make custom changes in this base image
 docker ps -a #copy contianer id to create the custom image
 docker commit -m "already installed ssh and test user" -a "jatin" aeade3a2defa makani/ubuntusshd:v1
@@ -149,7 +153,7 @@ docker commit -m "already installed ssh and test user" -a "jatin" aeade3a2defa m
 
 #### attach the container:
 
-```
+``` shell
 #you can use attach and exec with running container
 docker attach container-id # it will attach but on exit it will stop the container
 docker exec -it LifeCycle1 /bin/bash # exit will not stop the container
@@ -159,7 +163,7 @@ docker run -d ubuntu:xenial /bin/bash -c "while true; do echo HELLO;sleep 1;done
 
 #### remove images and container:
 
-```
+``` shell
 docker images
 docker rmi image-name # it will not remove the image if we have used the image previously
 docker rmi -f image-name # will remove image forcefull
@@ -183,19 +187,19 @@ docker system prune         # remove all the images, stopped containers,
 
 #### search for open ports:
 
-```
+``` shell
 docker port webserver1 $CONTAINERPORT # it will give you the port mapping for the webserver1 container
 ```
 
 ## STORAGE
 
-```
+``` shell
 /var/lib/docker #where docker will store all the images containers and lot more
 ```
 
 #### mount data inside the container:
 
-```
+``` shell
 docker run -d -p 8080:80 --name=webserver1 -v /mnt/data nginx:latest
 docker run -d -p 8080:80 --name=webserver1 -v /home/user/www:/usr/share/nginx/html nginx:latest
 # you can store index.html file on host /home/usr/www/ location and then map it to the /usr/share/nginx/html
@@ -204,7 +208,7 @@ docker run -d -p 8080:80 --name=webserver1 -v /home/user/www:/usr/share/nginx/ht
 
 ## Troubleshooting:
 
-```
+``` shell
 curl http://localhost:51678/v1/tasks | python-msjson.tool
 docker logs <container id>
 docker ps -a
@@ -215,7 +219,7 @@ docker inspect <container id>
 
 #### volume inforamtion:
 
-```
+``` shell
 docker ifo | grep "Data Space"
 # resize the metadata space
 lvresize --poolmetadatasize +10M /dev/docker/docker-pool
@@ -225,7 +229,7 @@ lvresize --poolmetadatasize +10M /dev/docker/docker-pool
 
 #### Dockerfile #to non-privileged user entry
 
-```
+``` shell
 FROM centos:latest
 MAINTAINER jmakani@hawk.iit.edu
 RUN useradd -ms /bin/bash user
@@ -241,7 +245,7 @@ docker exec -u 0 -it container-id /bin/bash #to run that container as a root use
 
 #### RUN vs CMD
 
-```
+``` shell
 RUN will be part of base image normally but CMD will run at container instantation (in other word it is part of configuratio of base image)
 CMD "echo" "This is a custom contianer message"
 # it will only run during the instantiation of contianer based on base image
@@ -249,20 +253,20 @@ CMD "echo" "This is a custom contianer message"
 
 #### ENTRYPOINT
 
-```
+``` shell
 ENTRYPOINT "echo" "THis command will displayes this message on every container that is run from it"
 It will create the concrete entry point for container, it behaves same like CMD but for CMD you can change the behavioud while run time but for ENTRYPOINT command you cant change the behaviour
 ```
 
 #### EXPOSE
 
-```
+``` shell
 EXPOSE 80 #will automatically expose port 80 while running container from this image
 ```
 
 #### VOLUME
 
-```
+``` shell
  docker run -it --name volumetest1 -v /mydata centos:latest /bin/bash
  /etc/lib/docker #docker inspect command will give name of volume and we can see that volume in this directory on host operating system
 
@@ -272,7 +276,7 @@ EXPOSE 80 #will automatically expose port 80 while running container from this i
 
 #### Docker Network: List and Inspect
 
-```
+``` shell
  docker network ls #it will list all the network associated with host
  docker network ls --no-trunc #to see full network id
  docker network inspect network-name # detail about network
@@ -287,7 +291,7 @@ EXPOSE 80 #will automatically expose port 80 while running container from this i
 
 #### Docker Network: Assign to Containers
 
-```
+``` shell
   docker network create --subnet 10.1.0.0/16 --gateway 10.1.0.1 --ip-range=10.1.4.0/24 --driver=bridge --label=host4network bridge04
   docker run -it --name nettest1 --net bridge04 centos:latest /bin/bash
 
@@ -307,7 +311,7 @@ EXPOSE 80 #will automatically expose port 80 while running container from this i
 
 ## Inspect Container Processes/ Docker performance
 
-```
+``` shell
  docker exec container-name /bin/ps
  docker exec container-name /bin/ps aux | grep bash
  docker top container-name
@@ -318,7 +322,7 @@ EXPOSE 80 #will automatically expose port 80 while running container from this i
 
 ## Docker Events
 
-```
+``` shell
  docker events
  docker events --since '48h'
  docker events --since 48h
@@ -328,7 +332,7 @@ EXPOSE 80 #will automatically expose port 80 while running container from this i
 
 #### Saving and loading docker images
 
-```
+``` shell
  docker run -it centos:latest /bin/bash
  docker ps -a
  docker commit eloquent_hodgkin centos:mine
@@ -343,7 +347,7 @@ EXPOSE 80 #will automatically expose port 80 while running container from this i
 
 #### Image history
 
-```
+``` shell
  docker history centos:mine
  docker history --no-trunc centos:mine
  docker history --no-trunc centos:mine > output.txt
@@ -356,7 +360,7 @@ EXPOSE 80 #will automatically expose port 80 while running container from this i
 
 #### Push images to docker hub
 
-```
+``` shell
  docker login #enter username and password
  cd .docker
  cat config.json
@@ -374,7 +378,7 @@ webapp1 running with port 80 open and linked to port 8081
 webapp2 running with port 80 opean and linked to port 8082
 use nginx to redirect traffic to port 80 on host to port 8081 and 8082 and from there to docker container port 80
 
-```
+``` shell
  docker run -it centos:centos6 /bin/bash
  yum update
  yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
@@ -428,7 +432,7 @@ use nginx to redirect traffic to port 80 on host to port 8081 and 8082 and from 
 
 ## Integrating Custom Network In Your Docker Containers
 
-```
+``` shell
  service docker stop
  ip link add br10 type bridge
  ip addr add 10.10.100.1/24 dev br10 #we are passing br10 as device to use
@@ -449,29 +453,116 @@ use nginx to redirect traffic to port 80 on host to port 8081 and 8082 and from 
 
 First stop the docker service:
 
-```
+``` shell
 sudo service docker stop
 ```
 
 Then move the docker folder from the default location to your target location:
 
-```
+``` shell
 sudo mv /var/lib/docker /thenewlocation
 ```
 
-```
+
+
+``` shell
 Then edit the `/etc/default/docker` file, inserting/amending the following line which provides the new location as an argument for the docker service:
 ```
 
-```
+
+
+``` shell
 DOCKER_OPTS="-g /thenewlocation/docker"
 ```
 
 #### Restart the docker service:
 
-```
+``` shell
 sudo service docker start
 ```
 
 This worked 100% for me - all my images remained in tact.
 
+
+
+
+
+
+
+
+
+## NEW
+
+### Specifying target build stage (--target)
+
+When building a Dockerfile with multiple build stages, `--target` can be used to specify an intermediate build stage by name as a final stage for the resulting image. Commands after the target stage will be skipped.
+
+```
+FROM debian AS build-env
+...
+
+FROM alpine AS production-env
+...
+```
+
+
+
+
+
+
+
+
+
+
+
+### Custom build outputs
+
+By default, a local container image is created from the build result. The `--output` (or `-o`) flag allows you to override this behavior, and a specify a custom exporter. For example, custom exporters allow you to export the build artifacts as files on the local filesystem instead of a Docker image, which can be useful for generating local binaries, code generation etc.
+
+The value for `--output` is a CSV-formatted string defining the exporter type and options. Currently, `local` and `tar` exporters are supported. The `local` exporter writes the resulting build files to a directory on the client side. The `tar` exporter is similar but writes the files as a single tarball (`.tar`).
+
+If no type is specified, the value defaults to the output directory of the local exporter. Use a hyphen (`-`) to write the output tarball to standard output (`STDOUT`).
+
+The following example builds an image using the current directory (`.`) as build context, and exports the files to a directory named `out` in the current directory. If the directory does not exist, Docker creates the directory automatically:
+
+```\
+$ docker build -o out .
+```
+
+
+
+
+
+
+
+
+
+```
+FROM golang AS build-stage
+RUN go get -u github.com/LK4D4/vndr
+
+FROM scratch AS export-stage
+COPY --from=build-stage /go/bin/vndr /
+```
+
+When building the Dockerfile with the `-o` option, only the files from the final stage are exported to the `out` directory, in this case, the `vndr` binary:
+
+```
+$ docker build -o out .
+
+[+] Building 2.3s (7/7) FINISHED
+ => [internal] load build definition from Dockerfile                                                                          0.1s
+ => => transferring dockerfile: 176B                                                                                          0.0s
+ => [internal] load .dockerignore                                                                                             0.0s
+ => => transferring context: 2B                                                                                               0.0s
+ => [internal] load metadata for docker.io/library/golang:latest                                                              1.6s
+ => [build-stage 1/2] FROM docker.io/library/golang@sha256:2df96417dca0561bf1027742dcc5b446a18957cd28eba6aa79269f23f1846d3f   0.0s
+ => => resolve docker.io/library/golang@sha256:2df96417dca0561bf1027742dcc5b446a18957cd28eba6aa79269f23f1846d3f               0.0s
+ => CACHED [build-stage 2/2] RUN go get -u github.com/LK4D4/vndr                                                              0.0s
+ => [export-stage 1/1] COPY --from=build-stage /go/bin/vndr /                                                                 0.2s
+ => exporting to client                                                                                                       0.4s
+ => => copying files 10.30MB                                                                                                  0.3s
+
+$ ls ./out
+vndr
+```

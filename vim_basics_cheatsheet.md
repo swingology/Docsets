@@ -171,11 +171,17 @@ ___
 
 If you want, you can probably do everything from one vim session! :) Here are some commands to turn one vim session (inside one xterm) into multiple windows.
 
- :e filename      - edit another file
+[Vim Splits Resize Summary](https://vim.fandom.com/wiki/Resize_splits_more_quickly)
+https://vim.fandom.com/wiki/Resize_splits_more_quickly
+
+
+:e filename      - edit another file
  :split filename  - split window and load another file
  ctrl-w up arrow  - move cursor up a window
  ctrl-w ctrl-w    - move cursor to another window (cycle)
- ctrl-w_          - maximize current window
+ ctrl-w _         - maximize current window height
+ ctrl -w |          - maximize current window width
+ 
  ctrl-w=          - make all equal size
  10 ctrl-w+       - increase window size by 10 lines
  :vsplit file     - vertical split
@@ -183,7 +189,15 @@ If you want, you can probably do everything from one vim session! :) Here are so
  :hide            - close current window
  :only            - keep only this window open
  :ls              - show current buffers
- :b 2             - open buffer #2 in this window
+ :b2             - open buffer #2 in this window
+:res +5/-5         - resize height relatively       <c-w> + or - 
+:res 60             - resize height absolutely  
+:vert res 80 - resize width absolutely
+:vert +5/-5  - resize width relatively  <c-w> < or >
+
+To resize in different steps, you can create maps that will adjust the window size differently. For example to increase the window size by a factor of 1.5 and decrease the window size by 0.67, you can map this: 
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 ___
 ### EDITING IN A STREAM

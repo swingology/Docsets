@@ -10,6 +10,9 @@
 [Install docker on linux](https://docs.docker.com/engine/install/ubuntu/)
 
 [Alpine Linux Website](https://alpinelinux.org/)
+[Docker for Python Developers](https://mherman.org/presentations/dockercon-2018/)
+
+
 
 
 
@@ -72,3 +75,27 @@ docker system prune
 
 ### UNINSTALL
 https://doc.docker.com/engine/reference/commandline/app_uninstall
+
+
+
+### STORAGE STRATEGIES
+https://thenewstack.io/methods-dealing-container-storage/
+https://docs.docker.com/storage/
+https://www.freecodecamp.org/news/where-are-docker-images-stored-docker-container-paths-explained/
+
+
+
+
+
+
+### MISC
+
+[excellent practical tutorial- quick answers for adv topics](https://riptutorial.com/docker/example/20749/a--launch-a-container-with-a-volume)
+
+
+
+https://www.whitesourcesoftware.com/free-developer-tools/blog/update-docker-images/
+
+
+https://linuxize.com/post/how-to-connect-to-docker-container/
+https://riptutorial.com/docker/topic/5908/concept-of-docker-volumes

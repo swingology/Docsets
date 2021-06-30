@@ -15,7 +15,7 @@ COMMAND [DIRECTORY/] [FUZZY_PATTERN] **<TAB>
 fzff                    - custom with bat preview
 fzf --exact             - exact match
 fzf -m                  - multi select mode
-CTRL-T                  - paste path fo file 
+CTRL-T                  - search DIR
 CTRL-R                  - search COMMAND HISTORY
 ALT-C                   - cd to specific directory
 
@@ -24,10 +24,53 @@ ALT-C                   - cd to specific directory
 
 vim **<TAB>       - open file under current directory
 vim ../**<TAB>    - open file under parent directory
-vim ~/**<TAB>     - open file under $HOME
-cd **<TAB>        - go to a directory under current directory
+vim ~/**<TAB>     - open file under HOME ~
+cd ** <TAB>        - go to a directory under current directory
 
 #### FZF IN NVIM
+[GH fzf_vim ref](https://github.com/junegunn/fzf.vim)
+:Files [PATH]       - serach for files under PATH
+:Buffers            - search open buffers
+:Rg [Pattern]       - do a rg search in vim on Pattern
+:History:           - Command History
+:History/            - Search history
+:Snippets           - search Ultisnips
+:Commits            - search Git vommits
+:Commands           - search commands
+:Maps               - Normal mode mappings
+:Marks
+:windwos
+:Files [PATH] 	Files (runs $FZF_DEFAULT_COMMAND if defined)
+:GFiles [OPTS] 	Git files (git ls-files)
+:GFiles? 	Git files (git status)
+:Colors 	Color schemes
+:Ag [PATTERN] 	ag search result (ALT-A to select all, ALT-D to deselect all)
+:Rg [PATTERN] 	rg search result (ALT-A to select all, ALT-D to deselect all)
+:Lines [QUERY] 	Lines in loaded buffers
+:BLines [QUERY] 	Lines in the current buffer
+:Tags [QUERY] 	Tags in the project (ctags -R)
+:BTags [QUERY] 	Tags in the current buffer
+:Locate PATTERN 	locate command output
+:History 	v:oldfiles and open buffers
+:History: 	Command history
+:History/ 	Search history
+:Commits 	Git commits (requires fugitive.vim)
+:BCommits 	Git commits for the current buffer; visual-select lines to track changes in the range
+:Commands 	Commands
+:Maps 	Normal mode mappings
+:Helptags 	Help tags 1
+:Filetypes 	File types
+
+
+- Most commands support CTRL-T / CTRL-X / CTRL-V key bindings to open in a new tab, a new split, or in a new vertical split in SEARCH WINDOW
+- Bang-versions of the commands (e.g. Ag!) will open fzf in fullscreen
+- You can set g:fzf_command_prefix to give the same prefix to the commands
+    e.g. let g:fzf_command_prefix = 'Fzf' and you have FzfFiles, etc.
+
+
+
+
+
 
 vim $(fzf)
     <Enter>: open file in current window
@@ -68,19 +111,13 @@ Does no support regex - such as *.sh
 
 
 
-
 vim -o 'fzf' open a file in vim named fzf 
 fzf | xargs ls -l  -  print info for each selected file
 
-
 #### Fuzzy Completion for shell 
-vim ~/paht
 
+vsetting default fzf command call
 
-
-
-
-### setting default fzf command call
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 CTRL-T - Paste the selected files and directories onto the command-line
@@ -105,8 +142,8 @@ find * -type f | fzf > selected
  - Emacs style key bindings
  - Mouse: scroll, click, double-click; shift-click and shift-scroll on
    multi-select mode
-Layout
-vim $(fzf --height 40%)
+   Layout
+   vim $(fzf --height 40%)
 ```shell
 vim $(fzf --height 40%)
 vim $(fzf --height 40% --reverse)
@@ -205,7 +242,7 @@ ssh **<tab>
 
 
  #### [Options](https://github.com/junegunn/fzf#options)
-  
+
 https://www.youtube.com/watch?v=gdVjVtpr55M&list=PL-qpqUnq0PzQe6g2bgPzYGcvFwsRAZOU7&index=3&ab_channel=PTXofficial
 https://www.youtube.com/watch?v=ghs09zm90Rg
 https://www.youtube.com/watch?v=gw2rhd-s8rc&ab_channel=TechVision

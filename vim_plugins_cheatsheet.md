@@ -4,6 +4,27 @@
 - [ ] shift tab in zshell ~ FZF?
 -
 
+## Plugins Most Used Commands
+
+:GitGutterEnable
+:GitGutterDisable
+:GitGutterToggle
+
+
+Markdown Plugin
+:Toc
+:TableFormat
+:InsertToc {n}  - display up to headers h{n} (n is an int)
+:InsertNToc
+]]              - go to next header
+[[              - go to previous header
+][              - go to next sibling
+[]              - go to previous sibling
+]c              - go to current header
+]u              - go to parent header 
+
+
+
 ## TOC
 
 <!-- vim-markdown-toc GitLab -->
@@ -57,6 +78,20 @@ https://vim.fandom.com/wiki/Avoid_the_escape_key
 
 
 
+### COC
+https://github.com/neoclide/coc.nvim/wiki/Install-coc.nvim
+https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions
+
+:CocInfo
+:CocInstall <extensions>
+:CocCommand <tab>               - command completion
+
+:CocList commands
+:CocUninstall <extensions>
+:CocList extensions             - list coc extensions
+
+
+
 
 ### FLOATTERM
 [Floatterm Use Guide](https://github.com/voldikss/vim-floaterm#get-started)
@@ -70,45 +105,33 @@ https://vim.fandom.com/wiki/Avoid_the_escape_key
 
 
 ### VIM-MARKDOWN
-[Vim-Markdown GH Page]https://github.com/plasticboy/vim-markdowni(
+[Vim-Markdown GH Page](https://github.com/plasticboy/vim-markdown)
 
-
-
+| :TableFormat | cleanup table|
+| :Toc | create vertical splt window with TOC | 
+| :InsertToc | Create TOC where cursor is | 
 | [[ or ]] | move to next or prev header |  n/v |
 | [] or ][ | prev sibling or next sibling header | n/v |
 | ]c | go to current header | n/v |
 | ]u | go to parent header | n/v |
-
-
+| **MAPPINGS**|
+| ge | follow link under cursor from vim| n/v|
+| gx | open link under cursor as standard gx | n/v/|
 
 
 | CHANGING CASES | | | | | | | | 
  ~    : Changes the case of current character
-
  guu  : Change current line from upper to lower.
-
  gUU  : Change current LINE from lower to upper.
-
  guw  : Change to end of current WORD from upper to lower.
-
  guaw : Change all of current WORD to lower.
-
  gUw  : Change to end of current WORD from lower to upper.
-
  gUaw : Change all of current WORD to upper.
-
  g ~ ~  : Invert case to entire line
-
  g ~ w  : Invert case to current WORD
-
  guG  : Change to lowercase until the end of document.
-
  gU)  : Change until end of sentence to upper case
-
  gu}  : Change to end of paragraph to lower case
-
- gU5j : Change 5 lines below to upper case
-
  gu3k : Change 3 lines above to lower case
 
 
