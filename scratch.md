@@ -1,5 +1,133 @@
 scratch buffers
 
+2021-06-30
+
+vim tabs
+
+```
+vim -p first.txt second.txt
+:tabedit {file}   edit specified file in a new tab
+:tabfind {file}   open a new tab with filename given, searching the 'path' to find it
+:tabclose         close current tab
+:tabclose {i}     close i-th tab
+:tabonly          close all other tabs (show only the current tab)
+
+you could use :tabe and :tabf instead of :tabedit and :tabfind. 
+
+:tabf invent* | tab find with wildcard | 
+
+ That window can be moved to a new tab by pressing Ctrl-W T, 
+ 
+ :tab sp (split the current window, but open the split in a new tab). 
+ 
+ 
+ NAVIGATION
+ :tabs         list all tabs including their displayed windows
+:tabm 0       move current tab to first
+:tabm         move current tab to last
+:tabm {i}     move current tab to position i+1
+:tabm +{i}    move current tab right to current position+i
+:tabm -{i}    move current tab left to current position-i
+
+:tabn         go to next tab
+:tabp         go to previous tab
+:tabfirst     go to first tab
+:tablast      go to last tab
+
+
+gt            go to next tab
+gT            go to previous tab
+{i}gt         go to tab in position i
+
+
+.vimrc
+set switchbuf=usetab
+nnoremap <F8> :sbnext<CR>
+nnoremap <S-F8> :sbprevious<CR>
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+nnoremap <silent> <A-Left> :tabm -1<CR>
+nnoremap <silent> <A-Right> :tabm +1<CR>
+
+----
+
+With the following, you can press F8 to show all buffers in tabs, or to close all tabs (toggle: it alternately executes :tab ball and :tabo).
+
+let notabs = 0
+nnoremap <silent> <F8> :let notabs=!notabs<Bar>:if notabs<Bar>:tabo<Bar>:else<Bar>:tab ball<Bar>:tabn<Bar>:endif<CR>
+
+The following command abbreviation allows typing :tabv myfile.txt to view the specified file in a new tab; the buffer is read-only and nomodifiable so you cannot accidentally change it.
+
+cabbrev tabv tab sview +setlocal\ nomodifiable
+
+----
+
+:help setting-tabline to rename tabs
+
+```
+
+
+
+:tabf invent* | tab find with wildcard | 
+
+BUFFER
+
+```bash
+https://vim.fandom.com/wiki/Buffers
+:e filename or :new
+:ls
+gvim scan.py 	start GUI Vim editing file scan.py in first tab
+:tabe example.txt 	edit file example.txt in a new tab
+:vimgrep /0$/ example.txt 	search for lines ending with 0 in file example.txt
+:cwin 	open quickfix window (window 4)
+Ctrl-W w 	move cursor to other window
+:vsp 	split window vertically (windows 2 and 3 showing example.txt)
+:help quickfix 	open help (window 1)
+(commands not shown) 	scroll and size each window 
+
+
+
+:b ex would wofk for a buffer with example.txt
+:sfind
+
+
+To gain more control over how the splits are created, you can combine the :vertical, :leftabove and :rightbelow commands. Also of use are the the :sfind and :sb commands.
+Examplesedit | edit source
+
+:vertical sb 3
+    Create a vertical split and show buffer number 3 in the window to the left.
+
+:vertical rightbelow sfind file.txt
+    Create a vertical split and read file.txt into the buffer in the right window.
+
+:rightbelow sfind file.txt
+    Create a horizontal split and read file.txt into the buffer in the bottom window.
+    
+    :ls 	List the current buffers (including their numbers).
+:b <number> 	Display the buffer with the given number.
+:b <partial> 	Display the first buffer matching the partial name (or press Tab for name completion).
+:bd 	Delete the current buffer; will fail if unsaved (nothing is deleted).
+:bd! 	Delete the current buffer; will discard any changes (changes are lost). 
+```
+
+
+
+TEMRINAL
+
+
+
+
+
+<C-s> to split 
+
+then :terminal
+
+
+
+Fzf 
+
+
+
 
 
 ## TODO
@@ -301,7 +429,7 @@ In a pattern, \< and \> respectively specify the beginning and end of a word, wh
 
 
 
-
+7
 
 
 
@@ -314,7 +442,9 @@ In a pattern, \< and \> respectively specify the beginning and end of a word, wh
 
 highlghting search terms
 :set hlsearch
-:et ohlsearch
+:set ohlsearch
+
+:noh  --- turn off highlighting
 
 
 | PATTERN | MATCHES|
@@ -323,6 +453,9 @@ highlghting search terms
 | Word	    | Word |
 | WORD	    | WORD |
 | WoRd	    | WoRd |
+
+
+
 
 
 

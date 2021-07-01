@@ -935,3 +935,4 @@ https://www.youtube.com/watch?v=nIJQPX5kxp4&ab_channel=ProfessorLeonardhttps://w
  61
  62 # Print info for each selected file
  NORMAL  fzf cheatsheet.md                        markdown  utf-8[dos]  1,427 words  66% :225/338☰ :1  ☲ [283]trailing 
+
