@@ -4,14 +4,14 @@
 ______
 ## DockerFiles
 
-### Python Alpine DockerFile
+### Example - Python Alpine DockerFile
 Create following dockerfile in a dir that will house the project APP dir
 ``` shell
 FROM python:3.9.5-alpine
 
 WORKDIR /app
 COPY requirements.txt /
-RUN pip isntall -r /requirements.txt    # isntall flask and gunicorn
+RUN pip install -r /requirements.txt    # isntall flask and gunicorn
 
 COPY . /app
 
@@ -20,7 +20,7 @@ COPY . /app
 
 
 
-### Datascience example dockerfile
+### Example - Datascience example dockerfile
 ``` shell
 
 FROM python:3.6-alpine
@@ -34,9 +34,17 @@ WORKDIR /notebooks
 
 ```
 
+### CMDS
+| FROM | using a dockerhub image | 
+||
+| RUN | run a command during build process - usually install
+| RUN apk add --update redis | 
+| |
+| CMD | command on starting container from image | 
+| CMD ["redis-server"] |  
 
 
-## Multi Stage Builds
+### Multi Stage Builds
 Take advantage of multi-stage builds to create a temp image used for building an artifact that will be copied over to the production image. The temp build image is discarded along with the original files, folders, and dependencies associated with the image.
 
 This produces a lean, production-ready image.

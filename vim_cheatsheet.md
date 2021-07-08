@@ -42,9 +42,43 @@ Tip: it can be changed on the fly with:
 :edit
 ```
 
+### MINI SHORTCUTS TESTED
+| ctrl-p | start fzf | n v | m1mini |
+| <s-p> | paste in spot | n v | m1mini | 
 
+ctrl f - forward a page | n v | 
+ctrl b - backward a page | nv | 
 
+### GLOBAL 
+:s/<esarchterm>/<replaceTerm>/gc
+g - global 
+c - confirmation
 
+shift + k | man the word under cursor | n  v |
+<s-r> | replace mode | n  | 
+<s-r> | delete line | v  | 
+<s-p> | duplicate line | n | 
+<s-j> | delete line below | n v |
+<c-j> | insert line above if blnak line - cut line and cr if in middle of line | i |
+
+@FIXME: 
+The main question - end of line
+
+$ goes to the end of line, remains in command mode
+
+A goes to the end of line, switches to insert mode
+
+Conversely - start of line (technically the first non-whitespace character)
+
+^ goes to the start of line, remains in command mode
+
+I (uppercase i) goes to the start of line, switches to insert mode
+
+Further - start of line (technically the first column irrespective of whitespace)
+
+0 (zero) goes to the start of line, remains in command mode
+
+0i (zero followed by lowercase i) goes the start of line, switches to insert mode
 
 
 
@@ -200,27 +234,39 @@ shift l m h
 
 |COMMAND |ACTION | MODE | TAGS | APP |
 |----|---|---|---|----|
+| **SPLITS PANES** | | | | |
 |:vsp {file} | open file in vsp | c | | | 
 |:sp or :hsp {file} | open file in hsp | c | | |
 |:q | close pane | c | | |
-| RESIZING SPLITS |     |   |   | |
-| ctrl-w +/- | increases/decreases current horiz split by 1 line | n | | | 
-| ctrl-w </> | increases/decrease current vert split by 1 line | n | | |
-| ctrl-w <num>+{+,-,<,>}    | increases current pane by num | n | | |
-| ctrl-w shft-'-'(_) | cur pane maximize horiz | n | | |
-| ctrl-w shft-\(|) | cur pane maximize vert | n | | |
-| ctrl-w = | make all panes equal | n | | |
-| [N]ctrl-w {-,+,<,>} | change width or height by N chars | n | | |
-| :vertical resize 30 | resize current pane to 30 chars wide | c | | |
-| :30winc + or - | 30 more/less chars high | c | | |
-| :30winc > or :30winc < | 30 more/less chars wide | c | | |
-| :res <N>            | set curent window to N rows | c | | |
-| :vsp <file path>i | open vertical split| c | | |
-| :sp <file> | open horizontal split| c | | |
-| <num>:sp <file> | open h split with split height | c | | |
-| <num>:vsp <file> | open v split with split width | c | | |
-| :set scrollbind or scb | scroll the panes together | c | | | 
-| :set scb! | turn off scroll bind| | | | 
+| <c-ww> | switch to next pane | n V |
+| --------- | ------------- | ---------------- | ---- | --- |
+| **SPLITS PANES**       |                                                   |                        |      |     |
+| :vsp {file}            | open file in vsp                                  | c                      |      |     |
+| :sp or :hsp {file}     | open file in hsp                                  | c                      |      |     |
+| :q                     | close pane                                        | c                      |      |     |
+| <c-ww>                 | switch to next pane                               | n V                    |      |     |
+| **RESIZING SPLITS**    |                                                   |                        |      |     |
+| ctrl-w +/-             | increases/decreases current horiz split by 1 line | n                      |      |     |
+| ctrl-w </>             | increases/decrease current vert split by 1 line   | n                      |      |     |
+| ctrl-w <num>+{+,-,<,>} | increases current pane by num                     | n                      |      |     |
+| ctrl-w shft-'-'(_)     | cur pane maximize horiz                           | n                      |      |     |
+| ctrl-w shft- "|"       | cur pane maximize vert | n    |     | |
+| ctrl-w =               | make all panes equal                              | n                      |      |     |
+| <c-w> _ | maximize height of pane | n | | | 
+| <c-w> "|" |  mazimized width of pane | n | | |
+| [N]ctrl-w {-,+,<,>}    | change width or height by N chars                 | n                      |      |     |
+| :vertical resize 30    | resize current pane to 30 chars wide              | c                      |      |     |
+| :30winc + or -         | 30 more/less chars high                           | c                      |      |     |
+| :30winc > or :30winc < | 30 more/less chars wide                           | c                      |      |     |
+| :res <N>               | set curent window to N rows                       | c                      |      |     |
+| <num>:sp <file>        | open h split with split height                    | c                      |      |     |
+| <num>:vsp <file>       | open v split with split width                     | c                      |      |     |
+| :set scrollbind or scb | scroll the panes together                         | c                      |      |     |
+| :set scb!              | turn off scroll bind                              |                        |      |     |
+| :top [sp/vs]           | split to a pane at the top                        |                        |      | V   |
+| :bot [sp/vs]           | split to a pane at the bottom                     |                        |      |     |
+| :abo[ve] [sp/vs]       | split to a pane above current pane                |                        |      |     |
+| :bel[ow] [sp/vs]       | split to a pane below current pane                |                        |      |     |
 
 | ctrl -w shft h/j/k/l | change split configurations | n|
 
@@ -324,18 +370,57 @@ http://vimdoc.sourceforge.net/cgi-bin/help?tag=abbreviate-local
 @vim: @search: @
 | COMMAND | ACTION | MODE | TAGS | APP | 
 |---|---|---|---|---|
-| * over word | search forward for word under cursor | n |
-| # over word | search backwards for word under cursor | n|
-| /_pattern  | search pattern forwards |
-| ?_pattern | search pattern backwards |
-| /\<WORD\>  | searches for exact WORD match |
-| “gnu” you would use /\<gnu\> ||
+| * over word | search forward for word under cursor | n | | | 
+| # over word | search backwards for word under cursor | n | | | 
+| /_pattern  | search pattern forwards | n | | | 
+| ?_pattern | search pattern backwards | n | | |
+| /\<WORD\>  | searches for exact WORD match | n | | |
 | After search|
-| n | find next occurence | 
-| N | find previous occurence |
-| :set ic or ignorecase | sets case insensitive search (command line or vimrc) i|
-| /Word\c  | search for Word case insensitve |
-| /Word\C  | search for Word case match search |
+| n | find next occurence | n | | |
+| N | find previous occurence | n | | |
+| :set ic or ignorecase | sets case insensitive search (command line or vimrc) i| n | | |
+| /Word\c  | search for Word case insensitve | n | | | 
+| /Word\C  | search for Word case match search | n | | | 
+
+
+#### DELETE LINES
+https://vim.fandom.com/wiki/Quickly_adding_and_deleting_empty_lines
+normal mode - ctrl + j/k - deletes line below/above
+normal mode - ctrl + k - deletes link above
+" Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
+
+
+#### INSERTING LINE
+| o | inserts line after | n | | |
+| O | inserts line before | n | | |
+| #0 | inserts # of lines after | n | | |
+
+
+#### Suggested Remapping for Searching
+nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+ 
+m` sets the context mark to the current cursor position.
+`` jumps to the context mark to restore the cursor position.
+The g/^\s*$/ commands search for a line matching ^ (begin line), then zero or mor occurrences of whitespace, then $ (end line), that is, blank lines.
+\m sets the 'magic' option so the pattern will work regardless of the current 'magic' option.
++g/pattern/d executes d (delete) on lines matching pattern in the range + (a single line after the current line).
+:noh turns off any search highlighting. :help :nohlsearch
+:set paste sets Paste mode to temporarily switch off auto indenting so program comments won't be inserted (for example, in a cpp file, o on a //comment may insert // on the next       line).e
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### Searching Links
 https://vim.fandom.com/wiki/Searching

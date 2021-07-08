@@ -61,8 +61,51 @@ docker inspect container-id # gives details about container can: | grep ip to ca
 
 pull image (build and image) -> docker run (Creates a container) 
 
-docker exec 
+
+####### *********************************** ############
+### Docker Exec 
+https://docs.docker.com/engine/reference/commandline/exec/
+```
+# Run a command in a running container
+docker exec -it <container_id> <command>
+docker exec -it <container_id> redis-cli      # run redis-cli in containeri
+docker exec -it <container_id> sh
+```
+#### [Docker Exec Options](https://docs.docker.com/engine/reference/commandline/exec/#options)
+
+| Name, shorthand        | Default | Description                                                                                       |
+| ---------------------- | ------- | ------------------------------------------------------------------------------------------------- |
+| `--detach` , `-d`      |         | Detached mode: run command in the background                                                      |
+| `--detach-keys`        |         | Override the key sequence for detaching a container                                               |
+| `--env` , `-e`         |         | [API 1.25+](https://docs.docker.com/engine/api/v1.25/)<br>Set environment variables               |
+| `--env-file`           |         | [API 1.25+](https://docs.docker.com/engine/api/v1.25/)<br>Read in a file of environment variables |
+| `--interactive` , `-i` |         | Keep STDIN open even if not attached                                                              |
+| `--privileged`         |         | Give extended privileges to the command                                                           |
+| `--tty` , `-t`         |         | Allocate a pseudo-TTY                                                                             |
+| `--user` , `-u`        |         | Username or UID (format: <name\|uid>[:<group\|gid>])                                              |
+| `--workdir` , `-w`     |         | [API 1.35+](https://docs.docker.com/engine/api/v1.35/)<br>Working directory inside the container  |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+####### *********************************** ############
+
 docker attach
+docker create & docker start ( for containers) > combined in docker run
+
+docker stop vs docker kill   //docker stop tells it to start cleaning up and shutdown
+
+idocker logs
 
 
 

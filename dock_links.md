@@ -13,8 +13,7 @@
 [Docker for Python Developers](https://mherman.org/presentations/dockercon-2018/)
 
 
-
-
+- [ ] [Premade Docker Images for Flask and Injector Framework](https://python-dependency-injector.ets-labs.org/examples/fastapi-redis.html)
 
 
 ### DOCKER BUILD

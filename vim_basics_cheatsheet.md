@@ -4,6 +4,45 @@ TOC
 ---
 
 
+
+
+
+
+asdl;fkjdsa;lfkjsda;lZks
+
+
+
+## DOUBLE CHECK
+<c-c> | back to normal mode - previous char | i |
+<c-f> | iPy complete | i |
+< or > | indent | n |
+<c-i> | indent | i |
+< c-j > | same as enter |  i|
+< c-k > | some kind of replaecment | i |
+    <c-h>| backspace | i | 
+<c-n> <c-p>| keyword completion | i| 
+<c-o>
+<c-p>
+<c-q>
+<c-r>
+<c-s>
+<c-t>  | drag word and tab | i | 
+<c-u>  | delete from word to beginning of line | i |
+<c-v>
+<c-w>  | dw (n) - delete small word | i|
+<c-x>  | insert completion | i | @LOOKUP:
+<c-y>
+<c-z>
+      
+
+
+
+
+for>jasd;lfkjsda
+zdfd
+nadf asdfasdfads  asdfasdfasd      asd<Left>fads fs
+
+
 ### HELP
 | keys | action | mode | ex |
 |------| ------ | ---- | -- |

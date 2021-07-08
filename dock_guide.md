@@ -7,7 +7,8 @@
 ## 3. [Building a Web Farm for Development and Testing](#building-a-web-farm-for-development-and-testing)
 
 
-
+## LINKS
+- [ ] [Docker Volumes: an Explanation]9https://blog.container-solutions.com/understanding-volumes-docker)
 
 ## ENTRYPOINT vs COMMAND
 
@@ -19,6 +20,29 @@ docker history image-name
 
 docker ps --no-trunc
 ```
+
+
+## DOCKER COPY
+docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
+docker cp foo.txt mycontainer:/foo.txt
+
+
+docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATHi
+docker cp foo.txt mycontainer:/foo.txt
+
+docker cp src/. mycontainer:/target
+docker cp mycontainer:/src/. target
+
+
+https://docs.docker.com/engine/reference/commandline/cp/
+
+
+
+
+
+
+
+
 
 ## Learning docker basics
 
