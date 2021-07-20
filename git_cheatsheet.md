@@ -33,7 +33,7 @@
 | git reset -soft <commit_hash>  | undo recent git COMMITS                                       |
 |                                |                                                               |
 | git reset — hard HEAD@{5}      | Undo a rebase at hold commit HEAD5                            |
-|                               |                                                               |
+|                                |                                                               |
 
 
 

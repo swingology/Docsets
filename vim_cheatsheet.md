@@ -32,6 +32,20 @@
 
 <!-- vim-markdown-toc -->
 
+### Daily addisiont
+| <s-r> Replace mode | n | 
+| <s-p> paste in line above | n |
+| <s-p> replace line | v-line |
+| <s-w> | move to beginning of next word | n v |
+| e | move to end of next word | n v |
+| w | move to next beginning of word | n v | 
+
+
+
+
+
+
+
 
 ### EASY BEST ACTIONS
 
